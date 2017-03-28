@@ -1,4 +1,10 @@
 {
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "extends": "eslint:recommended",
   "env": {
     "browser": true,
@@ -6,7 +12,11 @@
     "jest": true,
     "es6": true
   },
+  "plugins": ["react"],
   "rules": {
-    "no-console": 1
+    "no-console": 1,
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2
   }
 }

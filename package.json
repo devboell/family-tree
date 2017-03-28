@@ -4,14 +4,23 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node src/server/server.js",
+    "dev": "nodemon src/server/server.js",
+    "build": "webpack"
   },
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.2.2",
+    "babel-preset-react": "^6.23.0",
     "eslint": "^3.18.0",
-    "nodemon": "^1.11.0"
+    "eslint-plugin-react": "^6.10.3",
+    "nodemon": "^1.11.0",
+    "webpack": "^2.3.2"
   }
 }
