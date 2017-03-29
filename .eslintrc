@@ -12,11 +12,15 @@
     "jest": true,
     "es6": true
   },
-  "plugins": ["react"],
+  "plugins": ["react", "import"],
   "rules": {
     "no-console": 1,
+    "import/no-unresolved": 2,
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
     "react/react-in-jsx-scope": 2
+  },
+  "settings": {
+    "import/resolver": "webpack"
   }
 }

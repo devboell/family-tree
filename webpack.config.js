@@ -15,16 +15,27 @@ module.exports = {
     filename: '[name].bundle.js',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
+      },
+      {
+        test: /\.json$/,
+        use: 'json-loader'
       }
     ]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
-]
+  ],
+  resolve: {
+    modules: ['src', 'src/client', 'node_modules'],
+    extensions: [
+      '.js',
+      '.jsx',
+    ]
+  },
 };

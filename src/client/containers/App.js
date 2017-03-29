@@ -1,7 +1,9 @@
 import React from 'react'
 
-const App = () =>
-  <p>hello world from react</p>
+import artists from 'data/artists.json'
+import List from 'components/List'
 
+const App = () =>
+  <List {...{ artists }} />
 
 export default App
