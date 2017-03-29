@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItem component snapshot 1`] = `
+<li
+  className="bfXghp"
+>
+  <h3>
+    testName
+  </h3>
+</li>
+`;

@@ -1,0 +1,12 @@
+{
+  "collectCoverageFrom": [
+   "src/client/**/*.{js,jsx}",
+   "!src/client/main.js"
+  ],
+  "moduleDirectories": [
+    "node_modules",
+    "src",
+    "src/client"
+  ],
+  "testRegex": "tests/.*\\.test\\.js$"
+}
