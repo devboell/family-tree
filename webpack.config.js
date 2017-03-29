@@ -1,9 +1,14 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   context: path.resolve(__dirname, './src/client'),
   entry: {
-    main: './main.js',
+    main: [
+      'react-hot-loader/patch',
+      'webpack-hot-middleware/client',
+      './main.js'
+    ],
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -17,5 +22,9 @@ module.exports = {
         loader: 'babel-loader',
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
+]
 };
