@@ -8,7 +8,8 @@ var app = express();
 var compiler = webpack(webpackConfig);
 
 app.use(devMiddleware(compiler, {
-  publicPath: "/"
+  publicPath: "/",
+  noInfo: true
 }))
 app.use(hotMiddleware(compiler))
 

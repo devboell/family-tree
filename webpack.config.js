@@ -38,4 +38,5 @@ module.exports = {
       '.jsx',
     ]
   },
+  devtool: 'eval-source-map'
 };
