@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node src/server",
-    "dev": "nodemon src/server",
+    "dev": "nodemon src/server -w src/server -w src/data",
     "build": "webpack",
     "test": "NODE_ENV=test jest --coverage -c .jestrc.json",
     "test:watch": "NODE_ENV=test jest --watchAll -c .jestrc.json"
