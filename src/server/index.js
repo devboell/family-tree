@@ -18,6 +18,7 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.static('dist/client'))
 
-app.listen(3000, function () {
-  console.log('listening on port 3000') // eslint-disable-line no-console
+var portNr = process.env.PORT || 3000
+app.listen(portNr, function () {
+  console.log('listening on port', portNr) // eslint-disable-line no-console
 })
