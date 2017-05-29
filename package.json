@@ -3,14 +3,23 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "betterScripts": {
+    "dev": {
+      "command": "nodemon src/server --exec babel-node --presets=env,react -w src/server -w src/data",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  },
   "scripts": {
     "start": "node src/server",
-    "dev": "nodemon src/server -w src/server -w src/data",
+    "dev": "better-npm-run dev",
     "build": "webpack",
     "test": "jest --coverage -c .jestrc.json",
     "test:watch": "jest --watchAll -c .jestrc.json"
   },
   "dependencies": {
+    "babel-cli": "^6.24.1",
     "express": "^4.15.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -22,6 +31,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
     "babel-preset-env": "^1.5.1",
     "babel-preset-react": "^6.23.0",
+    "better-npm-run": "^0.0.15",
     "eslint": "^3.18.0",
     "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-plugin-import": "^2.2.0",

@@ -1,17 +1,20 @@
-var express = require('express')
-var webpack = require("webpack")
-var devMiddleware = require("webpack-dev-middleware")
-var hotMiddleware = require("webpack-hot-middleware")
-var webpackConfig = require("../../webpack.config")
+// var express = require('express')
+import express from 'express'
+import webpack from 'webpack'
+import devMiddleware from 'webpack-dev-middleware'
+import hotMiddleware from 'webpack-hot-middleware'
+import webpackConfig from '../../webpack.config'
 
 var app = express();
-var compiler = webpack(webpackConfig);
 
-app.use(devMiddleware(compiler, {
-  publicPath: "/",
-  noInfo: true
-}))
-app.use(hotMiddleware(compiler))
+if (process.env.NODE_ENV === 'development') {
+  var compiler = webpack(webpackConfig);
+  app.use(devMiddleware(compiler, {
+    publicPath: "/",
+    noInfo: true
+  }))
+  app.use(hotMiddleware(compiler))
+}
 
 app.use(express.static('dist'))
 
