@@ -9,12 +9,36 @@
       "env": {
         "NODE_ENV": "development"
       }
+    },
+    "build:clean": {
+      "command": "rimraf dist && mkdirp dist/client dist/server"
+    },
+    "build:client": {
+      "command": "webpack",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "build:server": {
+      "command": "babel src/server -d dist/server --presets=env,react",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "start": {
+      "command": "node dist/server",
+      "env": {
+        "NODE_ENV": "production"
+      }
     }
   },
   "scripts": {
-    "start": "node src/server",
-    "dev": "better-npm-run dev",
-    "build": "webpack",
+    "postinstall": "bnr build:clean && bnr build:client && bnr build:server",
+    "start": "bnr start",
+    "dev": "bnr dev",
+    "build:clean": "bnr build:clean",
+    "build:client": "bnr build:client",
+    "build:server": "bnr build:server",
     "test": "jest --coverage -c .jestrc.json",
     "test:watch": "jest --watchAll -c .jestrc.json"
   },
@@ -36,13 +60,17 @@
     "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "^6.10.3",
+    "html-webpack-plugin": "^2.28.0",
     "jest": "^20.0.4",
     "json-loader": "^0.5.4",
+    "mkdirp": "^0.5.1",
     "nodemon": "^1.11.0",
     "react-hot-loader": "3.0.0-beta.6",
     "react-test-renderer": "^15.4.2",
+    "rimraf": "^2.6.1",
     "webpack": "^2.3.2",
     "webpack-dev-middleware": "^1.10.1",
-    "webpack-hot-middleware": "^2.17.1"
+    "webpack-hot-middleware": "^2.17.1",
+    "webpack-merge": "^4.1.0"
   }
 }

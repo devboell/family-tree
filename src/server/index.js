@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(hotMiddleware(compiler))
 }
 
-app.use(express.static('dist'))
+app.use(express.static('dist/client'))
 
 app.listen(3000, function () {
   console.log('listening on port 3000') // eslint-disable-line no-console

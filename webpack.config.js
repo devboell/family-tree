@@ -1,17 +1,14 @@
 const path = require('path');
-const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const prodConfig = require('./config/webpack.prod.config')
+const devConfig = require('./config/webpack.dev.config')
+const merge = require('webpack-merge')
 
-module.exports = {
+
+const commonConfig = {
   context: path.resolve(__dirname, './src/client'),
-  entry: {
-    main: [
-      'react-hot-loader/patch',
-      'webpack-hot-middleware/client',
-      './main.js'
-    ],
-  },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './dist/client'),
     filename: '[name].bundle.js',
   },
   module: {
@@ -20,17 +17,15 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader',
-      },
-      {
-        test: /\.json$/,
-        use: 'json-loader'
       }
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    })
   ],
+
   resolve: {
     modules: ['src', 'src/client', 'node_modules'],
     extensions: [
@@ -38,5 +33,12 @@ module.exports = {
       '.jsx',
     ]
   },
-  devtool: 'eval-source-map'
-};
+}
+
+function envConfig() {
+  return process.env.NODE_ENV === 'development'
+    ? devConfig
+    : prodConfig
+}
+
+module.exports = merge(commonConfig, envConfig())
