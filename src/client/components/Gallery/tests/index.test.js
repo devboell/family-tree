@@ -4,13 +4,13 @@ import Gallery from '../index'
 
 const match = {
   params: {
-    artistName: 'Heroshige'
-  }
+    artistName: 'Heroshige',
+  },
 }
 
 it('List component snapshot', () => {
   const tree = renderer.create(
-      <Gallery {...{ match }}/>
+    <Gallery {...{ match }} />,
   ).toJSON()
   expect(tree).toMatchSnapshot()
 });

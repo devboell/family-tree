@@ -7,7 +7,7 @@ it('List component snapshot', () => {
   const tree = renderer.create(
     <MemoryRouter>
       <Content />
-    </MemoryRouter>
+    </MemoryRouter>,
   ).toJSON()
   expect(tree).toMatchSnapshot()
 });

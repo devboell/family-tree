@@ -12,7 +12,7 @@ const ListItem = ({ name }) =>
 
 
 ListItem.propTypes = {
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
 }
 
 

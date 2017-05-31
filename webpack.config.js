@@ -17,13 +17,13 @@ const commonConfig = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader',
-      }
-    ]
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.html'
-    })
+      template: 'index.html',
+    }),
   ],
 
   resolve: {
@@ -31,7 +31,7 @@ const commonConfig = {
     extensions: [
       '.js',
       '.jsx',
-    ]
+    ],
   },
 }
 

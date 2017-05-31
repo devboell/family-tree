@@ -5,7 +5,7 @@
       "jsx": true
     }
   },
-  "extends": "eslint:recommended",
+  "extends": "airbnb",
   "env": {
     "browser": true,
     "node": true,
@@ -15,10 +15,13 @@
   "plugins": ["react", "import"],
   "rules": {
     "no-console": 1,
+    "semi": 0,
     "import/no-unresolved": 2,
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
-    "react/react-in-jsx-scope": 2
+    "react/react-in-jsx-scope": 2,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-wrap-multilines": 0
   },
   "settings": {
     "import/resolver": "webpack"
