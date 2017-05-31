@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
 const Ul = styled.ul`
+  flex-basis: 30%;
   list-style: none;
-  margin: 0;
   max-height: 30em;
   overflow-y: auto;
-  padding: 0 1em;
 `;
 
 export default Ul;
