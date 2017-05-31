@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItem component snapshot 1`] = `
+<li>
+  <a
+    href="/testName"
+    onClick={[Function]}
+  >
+    <h3
+      className="bfXghp"
+    >
+      testName
+    </h3>
+  </a>
+</li>
+`;

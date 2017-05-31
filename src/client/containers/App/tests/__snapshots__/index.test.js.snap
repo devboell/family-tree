@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component snapshot 1`] = `
+<div>
+  <header
+    className="gjLlnM"
+  >
+    <h2>
+      Ukiyo-e
+    </h2>
+  </header>
+  <main
+    className="jlRHmo"
+  >
+    <ul
+      className="BlXUP"
+    >
+      <li>
+        <a
+          href="/Heroshige"
+          onClick={[Function]}
+        >
+          <h3
+            className="bfXghp"
+          >
+            Heroshige
+          </h3>
+        </a>
+      </li>
+      <li>
+        <a
+          href="/Hokusai"
+          onClick={[Function]}
+        >
+          <h3
+            className="bfXghp"
+          >
+            Hokusai
+          </h3>
+        </a>
+      </li>
+      <li>
+        <a
+          href="/Utamaro"
+          onClick={[Function]}
+        >
+          <h3
+            className="bfXghp"
+          >
+            Utamaro
+          </h3>
+        </a>
+      </li>
+      <li>
+        <a
+          href="/Kunisada"
+          onClick={[Function]}
+        >
+          <h3
+            className="bfXghp"
+          >
+            Kunisada
+          </h3>
+        </a>
+      </li>
+    </ul>
+    <article
+      className="jdflTo"
+    >
+      <div>
+        Introduction text
+      </div>
+    </article>
+  </main>
+</div>
+`;

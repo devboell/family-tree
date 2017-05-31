@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const Li = styled.li`
+const Name = styled.h3`
   color: rgb(222, 81, 11);
 `;
 
-export default Li;
+export default Name;
