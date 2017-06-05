@@ -1,13 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ListItem component snapshot 1`] = `
-<li>
+<li
+  className="jhggzq"
+>
   <a
     href="/testName"
     onClick={[Function]}
   >
     <h3
-      className="bfXghp"
+      className="gGYiFP"
+      selected={true}
     >
       testName
     </h3>

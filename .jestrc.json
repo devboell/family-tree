@@ -1,7 +1,13 @@
 {
+  "setupFiles": ["./config/jestsetup.js"],
+  "snapshotSerializers": [
+    "<rootDir>/node_modules/enzyme-to-json/serializer"
+  ],
   "collectCoverageFrom": [
    "src/client/**/*.{js,jsx}",
-   "!src/client/main.js"
+   "!src/client/main.js",
+   "!src/client/configureStore.js",
+   "!src/client/reducers.js"
   ],
   "moduleDirectories": [
     "node_modules",

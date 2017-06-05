@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List component snapshot 1`] = `
+exports[`Gallery component snapshot 1`] = `
 <article>
   Heroshige
 </article>

@@ -12,10 +12,15 @@
     "jest": true,
     "es6": true
   },
+  "globals": {
+    "shallow": false,
+    "mount": true,
+    "render": true,
+  },
   "plugins": ["react", "import"],
   "rules": {
     "no-console": 1,
-    "semi": 0,
+    "semi": ["error", "never"],
     "import/no-unresolved": 2,
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,

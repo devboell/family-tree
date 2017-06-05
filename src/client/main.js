@@ -1,15 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader' // eslint-disable-line import/no-extraneous-dependencies
 import { BrowserRouter } from 'react-router-dom'
-import App from './containers/App'
+import App from 'components/App'
+
+import configureStore from './configureStore'
+
+const store = configureStore()
 
 const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
-      <BrowserRouter>
-        <Component />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Component />
+        </BrowserRouter>
+      </Provider>
     </AppContainer>,
     document.getElementById('main'),
   )
@@ -18,5 +25,5 @@ const render = (Component) => {
 render(App)
 
 if (module.hot) {
-  module.hot.accept('./containers/App', () => { render(App) })
+  module.hot.accept('components/App', () => { render(App) })
 }

@@ -1,13 +1,19 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { MemoryRouter } from 'react-router-dom'
-import App from '../index'
+import ListItem from '../index'
 
-it('App component snapshot', () => {
+const props = {
+  name: 'testName',
+  selected: true,
+  onSelect: () => {},
+}
+
+it('ListItem component snapshot', () => {
   const tree = renderer.create(
     <MemoryRouter>
-      <App />
+      <ListItem {...props} />
     </MemoryRouter>,
   ).toJSON()
   expect(tree).toMatchSnapshot()
-});
+})

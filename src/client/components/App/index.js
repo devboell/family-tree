@@ -1,8 +1,7 @@
 import React from 'react'
 
-import artists from 'data/artists.json'
+import ArtistsNav from 'containers/ArtistsNav'
 import Header from 'components/Header'
-import ArtistsNav from 'components/ArtistsNav'
 import Content from 'components/Content'
 import Main from './Main'
 
@@ -10,7 +9,7 @@ const App = () =>
   <div>
     <Header />
     <Main>
-      <ArtistsNav {...{ artists }} />
+      <ArtistsNav />
       <Content />
     </Main>
   </div>

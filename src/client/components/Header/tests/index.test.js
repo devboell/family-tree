@@ -1,9 +1,9 @@
 import React from 'react'
-import Content from '../index'
+import Header from '../index'
 
-it('List component snapshot', () => {
+it('Header component snapshot', () => {
   const wrapper = shallow(
-    <Content />,
+    <Header />,
   )
   expect(wrapper).toMatchSnapshot()
 })

@@ -1,9 +1,10 @@
 import React from 'react'
-import Content from '../index'
+import App from '../index'
 
-it('List component snapshot', () => {
+
+it('App component snapshot, enzyme', () => {
   const wrapper = shallow(
-    <Content />,
+    <App />,
   )
   expect(wrapper).toMatchSnapshot()
 })

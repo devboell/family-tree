@@ -1,11 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`List component snapshot 1`] = `
-<article
-  className="jdflTo"
->
-  <div>
-    Introduction text
-  </div>
-</article>
+<styled.article>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    component={[Function]}
+    path="/:artistName"
+  />
+</styled.article>
 `;

@@ -1,5 +1,4 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
 import Gallery from '../index'
 
 const match = {
@@ -8,9 +7,9 @@ const match = {
   },
 }
 
-it('List component snapshot', () => {
-  const tree = renderer.create(
+it('Gallery component snapshot', () => {
+  const wrapper = shallow(
     <Gallery {...{ match }} />,
-  ).toJSON()
-  expect(tree).toMatchSnapshot()
-});
+  )
+  expect(wrapper).toMatchSnapshot()
+})

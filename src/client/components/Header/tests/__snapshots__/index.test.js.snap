@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component snapshot 1`] = `
+<styled.header>
+  <h2>
+    Ukiyo-e
+  </h2>
+</styled.header>
+`;
