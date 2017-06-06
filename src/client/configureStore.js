@@ -10,7 +10,7 @@ const composeEnhancers =
   typeof window === 'object' &&
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
     /* istanbul ignore next */
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose
 /* eslint-enable */
 
 const configureStore = () => {

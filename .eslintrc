@@ -14,8 +14,8 @@
   },
   "globals": {
     "shallow": false,
-    "mount": true,
-    "render": true,
+    "mount": false,
+    "render": false,
   },
   "plugins": ["react", "import"],
   "rules": {
