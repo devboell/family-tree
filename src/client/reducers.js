@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import artistsNav from 'containers/ArtistsNav/reducer'
+import app from 'containers/App/reducer'
 
 export default combineReducers({
-  artistsNav,
+  app,
 })

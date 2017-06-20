@@ -22,6 +22,7 @@
     "no-console": 1,
     "semi": ["error", "never"],
     "import/no-unresolved": 2,
+    "import/no-named-as-default": 0,
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
     "react/react-in-jsx-scope": 2,

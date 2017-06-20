@@ -2,8 +2,9 @@
 
 exports[`Header component snapshot 1`] = `
 <styled.header>
-  <h2>
+  <HomeLink />
+  <styled.h1>
     Ukiyo-e
-  </h2>
+  </styled.h1>
 </styled.header>
 `;

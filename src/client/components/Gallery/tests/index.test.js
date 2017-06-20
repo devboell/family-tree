@@ -1,15 +1,16 @@
 import React from 'react'
-import Gallery from '../index'
+import artistsData from 'data/test/artists.json'
+import { Gallery } from '../index'
 
 const match = {
   params: {
-    artistName: 'Heroshige',
+    artistPath: 'heroshige',
   },
 }
 
 it('Gallery component snapshot', () => {
   const wrapper = shallow(
-    <Gallery {...{ match }} />,
+    <Gallery {...{ match }} artists={artistsData} />,
   )
   expect(wrapper).toMatchSnapshot()
 })

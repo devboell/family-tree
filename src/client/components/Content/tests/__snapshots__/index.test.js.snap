@@ -9,7 +9,12 @@ exports[`List component snapshot 1`] = `
   />
   <Route
     component={[Function]}
-    path="/:artistName"
+    exact={true}
+    path="/:artistPath"
+  />
+  <Route
+    component={[Function]}
+    path="/:artistPath/:paintingName"
   />
 </styled.article>
 `;

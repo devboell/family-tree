@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
 const Article = styled.article`
-  flex-basis: 70%;
-  border: 1px solid black;
-`;
+  display: flex;
+  justify-content: center;
+  margin: 20px 50px;
+  flex-basis: 80%;
+`
 
 export default Article

@@ -4,10 +4,10 @@ import devMiddleware from 'webpack-dev-middleware'
 import hotMiddleware from 'webpack-hot-middleware'
 import webpackConfig from '../../webpack.config'
 
-const app = express();
+const app = express()
 
 if (process.env.NODE_ENV === 'development') {
-  const compiler = webpack(webpackConfig);
+  const compiler = webpack(webpackConfig)
   app.use(devMiddleware(compiler, {
     publicPath: '/',
     noInfo: true,

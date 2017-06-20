@@ -1,0 +1,3 @@
+
+it('ArtistsNav actions', () => {
+})
