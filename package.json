@@ -25,6 +25,12 @@
         "NODE_ENV": "production"
       }
     },
+    "build:data": {
+      "command": "babel src/data -d dist/data --presets=env,react",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
     "start": {
       "command": "node dist/server",
       "env": {
@@ -33,12 +39,13 @@
     }
   },
   "scripts": {
-    "postinstall": "bnr build:clean && bnr build:client && bnr build:server",
+    "postinstall": "bnr build:clean && bnr build:client && bnr build:server && bnr build:data && cp src/data/artists.json dist/data",
     "start": "bnr start",
     "dev": "bnr dev",
     "build:clean": "bnr build:clean",
     "build:client": "bnr build:client",
     "build:server": "bnr build:server",
+    "build:data": "bnr build:data",
     "test": "jest --coverage -c .jestrc.json",
     "test:watch": "jest --watchAll -c .jestrc.json"
   },
