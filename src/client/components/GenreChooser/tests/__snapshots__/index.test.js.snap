@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GenreChooser component with all genres selected snapshot 1`] = `
+<styled.span>
+  <styled.div>
+    Genres:
+  </styled.div>
+  <styled.div>
+    <input
+      checked={true}
+      id="city"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      htmlFor="city"
+    >
+      City scenes
+    </label>
+  </styled.div>
+  <styled.div>
+    <input
+      checked={true}
+      id="landscape"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      htmlFor="landscape"
+    >
+      Landscapes & Travel
+    </label>
+  </styled.div>
+</styled.span>
+`;
+
+exports[`GenreChooser component with some genres selected snapshot 1`] = `
+<styled.span>
+  <styled.div>
+    Genres:
+  </styled.div>
+  <styled.div>
+    <input
+      checked={false}
+      id="city"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      htmlFor="city"
+    >
+      City scenes
+    </label>
+  </styled.div>
+  <styled.div>
+    <input
+      checked={true}
+      id="landscape"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      htmlFor="landscape"
+    >
+      Landscapes & Travel
+    </label>
+  </styled.div>
+</styled.span>
+`;

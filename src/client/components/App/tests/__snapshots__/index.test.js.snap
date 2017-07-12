@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component, snapshot 1`] = `
+<div>
+  <Header />
+  <styled.main>
+    <Apollo(ArtistsNav) />
+    <Content />
+  </styled.main>
+</div>
+`;

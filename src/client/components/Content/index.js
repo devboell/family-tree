@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import Home from 'components/Home'
-import Gallery from 'components/Gallery'
+import Gallery from 'containers/Gallery'
 import PaintingViewer from 'components/PaintingViewer'
 import Article from './Article'
 

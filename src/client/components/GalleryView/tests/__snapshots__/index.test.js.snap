@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GalleryView component snapshot 1`] = `
+<styled.div>
+  <GalleryItem
+    artistPath="testPath"
+    painting={
+      Object {
+        "name": "painting1.jpg",
+        "title": "painting1",
+      }
+    }
+  />
+  <GalleryItem
+    artistPath="testPath"
+    painting={
+      Object {
+        "name": "painting2.jpg",
+        "title": "painting2",
+      }
+    }
+  />
+</styled.div>
+`;

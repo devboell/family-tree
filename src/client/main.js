@@ -1,23 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
+import { ApolloProvider } from 'react-apollo'
 import { AppContainer } from 'react-hot-loader' // eslint-disable-line import/no-extraneous-dependencies
 import { BrowserRouter } from 'react-router-dom'
-import App from 'containers/App'
+import App from 'components/App'
 import './globalStyles'
 
-import configureStore from './configureStore'
+import initStore from './initStore'
+import initClient from './initClient'
 
-const store = configureStore()
+const client = initClient
+const store = initStore(client)
 
 const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
-      <Provider store={store}>
+      <ApolloProvider client={client} store={store}>
         <BrowserRouter>
           <Component />
         </BrowserRouter>
-      </Provider>
+      </ApolloProvider>
     </AppContainer>,
     document.getElementById('main'),
   )
@@ -26,5 +28,5 @@ const render = (Component) => {
 render(App)
 
 if (module.hot) {
-  module.hot.accept('containers/App', () => { render(App) })
+  module.hot.accept('components/App', () => { render(App) })
 }

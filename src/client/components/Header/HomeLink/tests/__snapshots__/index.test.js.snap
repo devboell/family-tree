@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeLink component, snapshot 1`] = `
+<Link
+  replace={false}
+  to="/"
+>
+  <styled.img
+    alt="Home"
+    src="test-file-stub"
+  />
+</Link>
+`;

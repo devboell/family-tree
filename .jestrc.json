@@ -4,11 +4,14 @@
     "<rootDir>/node_modules/enzyme-to-json/serializer"
   ],
   "collectCoverageFrom": [
-   "src/client/**/*.{js,jsx}",
-   "!src/client/configureStore.js",
-   "!src/client/globalStyles.js",
-   "!src/client/main.js",
-   "!src/client/reducers.js"
+    "src/client/**/*.{js,jsx}",
+    "!src/client/**/actionTypes.js",
+    "!src/client/configureStore.js",
+    "!src/client/globalStyles.js",
+    "!src/client/main.js",
+    "!src/client/initClient.js",
+    "!src/client/initStore.js",
+    "!src/client/reducers.js"
   ],
   "moduleDirectories": [
     "node_modules",

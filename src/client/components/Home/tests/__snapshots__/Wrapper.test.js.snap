@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wrapper, styled component snapshot 1`] = `
+.kZAgjJ {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  className="sc-bdVaJa kZAgjJ"
+/>
+`;

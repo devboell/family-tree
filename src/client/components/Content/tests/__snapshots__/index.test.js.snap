@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List component snapshot 1`] = `
+exports[`Content component snapshot 1`] = `
 <styled.article>
   <Route
     component={[Function]}

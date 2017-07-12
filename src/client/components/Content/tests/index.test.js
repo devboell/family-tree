@@ -1,7 +1,7 @@
 import React from 'react'
 import Content from '../index'
 
-it('List component snapshot', () => {
+it('Content component snapshot', () => {
   const wrapper = shallow(
     <Content />,
   )

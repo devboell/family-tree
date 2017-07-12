@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ul, snapshot 1`] = `
+.cceUqn {
+  list-style: none;
+  overflow-y: auto;
+}
+
+<ul
+  className="sc-bdVaJa cceUqn"
+/>
+`;

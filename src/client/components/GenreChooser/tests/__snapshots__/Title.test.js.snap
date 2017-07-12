@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title, styled component snapshot 1`] = `
+.boIDgt {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0px 10px;
+}
+
+<div
+  className="sc-bdVaJa boIDgt"
+/>
+`;

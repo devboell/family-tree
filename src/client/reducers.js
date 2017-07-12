@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
-import app from 'containers/App/reducer'
+import gallery from 'containers/Gallery/reducer'
 
-export default combineReducers({
-  app,
+export default client => combineReducers({
+  gallery,
+  apollo: client.reducer(),
 })

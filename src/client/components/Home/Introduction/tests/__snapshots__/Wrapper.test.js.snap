@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wrapper, styled component snapshot 1`] = `
+.dhSebg {
+  font-size: 20px;
+  padding: 10px 30px;
+}
+
+<div
+  className="sc-bdVaJa dhSebg"
+/>
+`;
