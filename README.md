@@ -4,7 +4,7 @@
 
 This is not meant to be a full-blown, production-ready boilerplate. Rather, I wanted to see if I could put together a decent basic boiler using the latest tools and libs. That said, it does work, and it can serve as a starting point for someone who wants to extend or customize it further. It can also be handy for people who want to play around with Apollo.
 
-Live demo of the example app: https://herokuapp.apollo-bp.com
+Live demo of the example app: https://apollo-bp.herokuapp.com
 
 This boilerplate uses:
 
@@ -23,7 +23,7 @@ This boilerplate uses:
 - development, test and production modes
 - babel, preset-env
 - eslint, airbnb
-- module resolving (no ``'../../../myFile'`` import paths)
+- module resolving (no long `'../../../myFile'` import paths)
 
 To remove the example app:
 - empty `src/client/components` and `src/client/containers` folders.
