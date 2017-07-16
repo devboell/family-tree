@@ -1,16 +1,16 @@
-const webpack = require('webpack');
+const webpack = require('webpack')
 
 module.exports = {
   entry: {
     main: [
       'react-hot-loader/patch',
       'webpack-hot-middleware/client',
-      './main.js'
+      './main.js',
     ],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
-  devtool: 'eval-source-map'
+  devtool: 'eval-source-map',
 }
