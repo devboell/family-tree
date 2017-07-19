@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RelationModel create 1`] = `
+Array [
+  9,
+]
+`;
+
+exports[`RelationModel findAll 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "person1Id": 1,
+    "person2Id": 2,
+  },
+  Object {
+    "id": 2,
+    "person1Id": 4,
+    "person2Id": 5,
+  },
+  Object {
+    "id": 3,
+    "person1Id": 7,
+    "person2Id": 8,
+  },
+  Object {
+    "id": 4,
+    "person1Id": 9,
+    "person2Id": 10,
+  },
+  Object {
+    "id": 5,
+    "person1Id": 4,
+    "person2Id": 14,
+  },
+  Object {
+    "id": 6,
+    "person1Id": 15,
+    "person2Id": 16,
+  },
+]
+`;
+
+exports[`RelationModel findByPersonId 1`] = `
+Array [
+  Object {
+    "id": 2,
+  },
+]
+`;
+
+exports[`RelationModel remove 1`] = `
+Array [
+  Object {
+    "id": 4,
+    "person1Id": 9,
+    "person2Id": 10,
+  },
+  Object {
+    "id": 5,
+    "person1Id": 4,
+    "person2Id": 14,
+  },
+  Object {
+    "id": 6,
+    "person1Id": 15,
+    "person2Id": 16,
+  },
+]
+`;

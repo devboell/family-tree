@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`partner, resolvers createPartners 1`] = `
+Array [
+  5,
+  14,
+  6,
+  7,
+]
+`;
+
+exports[`partner, resolvers partnerIds 1`] = `
+Array [
+  5,
+  14,
+]
+`;
+
+exports[`partner, resolvers partnersForPerson 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "birthDate": 1103,
+        "bornToId": 2,
+        "deathDate": 1120,
+        "gender": "M",
+        "id": 6,
+        "isMonarch": 0,
+        "name": "William Adelin",
+        "title": "Duke of Normandy",
+      },
+      Object {
+        "birthDate": 1102,
+        "bornToId": 2,
+        "deathDate": 1167,
+        "gender": "F",
+        "id": 7,
+        "isMonarch": 0,
+        "name": "Empress Matilde",
+        "title": "Holy Roman Empress",
+      },
+    ],
+    "partner": Object {
+      "birthDate": 1080,
+      "bornToId": null,
+      "deathDate": 1118,
+      "gender": "F",
+      "id": 5,
+      "isMonarch": 0,
+      "name": "Matilde of Scotland",
+      "title": "Queen of England",
+    },
+    "relationId": 2,
+  },
+  Object {
+    "children": Array [],
+    "partner": Object {
+      "birthDate": 1103,
+      "bornToId": null,
+      "deathDate": 1151,
+      "gender": "F",
+      "id": 14,
+      "isMonarch": 0,
+      "name": "Adeliza of Louvain",
+      "title": "Queen of England",
+    },
+    "relationId": 5,
+  },
+]
+`;
+
+exports[`partner, resolvers updatePartners 1`] = `
+Array [
+  14,
+  7,
+]
+`;

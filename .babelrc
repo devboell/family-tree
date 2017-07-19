@@ -6,7 +6,7 @@
     },
     "development": {
       "presets": [["env", { "modules": false }], "react"],
-      "plugins": ["react-hot-loader/babel"]
+      "plugins": ["react-hot-loader/babel", "transform-es2015-modules-commonjs"]
     },
     "test": {
       "presets": ["env", "react"],

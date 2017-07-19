@@ -39,7 +39,7 @@
     }
   },
   "scripts": {
-    "postinstall": "bnr build:clean && bnr build:client && bnr build:server && bnr build:data && cp src/data/artists.json dist/data",
+    "postinstall": "bnr build:clean && bnr build:client && bnr build:server && bnr build:data",
     "start": "bnr start",
     "dev": "bnr dev",
     "build:clean": "bnr build:clean",
@@ -47,7 +47,9 @@
     "build:server": "bnr build:server",
     "build:data": "bnr build:data",
     "test": "jest --coverage -c .jestrc.json",
-    "test:watch": "jest --watchAll -c .jestrc.json"
+    "test:watch": "jest --watchAll -c .jestrc.json",
+    "migrate": "babel-node node_modules/.bin/knex migrate:latest",
+    "seed": "npm run migrate && babel-node node_modules/.bin/knex seed:run"
   },
   "dependencies": {
     "babel-cli": "^6.24.1",
@@ -60,6 +62,8 @@
     "graphql": "^0.10.1",
     "graphql-server-express": "^0.8.5",
     "graphql-tools": "^1.0.0",
+    "graphql-type-json": "^0.1.4",
+    "knex": "^0.13.0",
     "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
@@ -68,6 +72,7 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
+    "sqlite3": "^3.1.8",
     "styled-components": "^2.1.0",
     "webpack": "^2.3.2",
     "webpack-dev-middleware": "^1.10.1",

@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PartnerModel findByPersonId 1`] = `
+Array [
+  Object {
+    "birthDate": 1080,
+    "bornToId": null,
+    "deathDate": 1118,
+    "gender": "F",
+    "id": 5,
+    "isMonarch": 0,
+    "name": "Matilde of Scotland",
+    "relationId": 2,
+    "title": "Queen of England",
+  },
+  Object {
+    "birthDate": 1103,
+    "bornToId": null,
+    "deathDate": 1151,
+    "gender": "F",
+    "id": 14,
+    "isMonarch": 0,
+    "name": "Adeliza of Louvain",
+    "relationId": 5,
+    "title": "Queen of England",
+  },
+]
+`;
+
+exports[`PartnerModel findChildren 1`] = `
+Array [
+  Object {
+    "birthDate": 1103,
+    "bornToId": 2,
+    "deathDate": 1120,
+    "gender": "M",
+    "id": 6,
+    "isMonarch": 0,
+    "name": "William Adelin",
+    "title": "Duke of Normandy",
+  },
+  Object {
+    "birthDate": 1102,
+    "bornToId": 2,
+    "deathDate": 1167,
+    "gender": "F",
+    "id": 7,
+    "isMonarch": 0,
+    "name": "Empress Matilde",
+    "title": "Holy Roman Empress",
+  },
+  Object {
+    "birthDate": 1133,
+    "bornToId": 3,
+    "deathDate": 1189,
+    "gender": "M",
+    "id": 9,
+    "isMonarch": 1,
+    "name": "Henry II",
+    "title": "King of England",
+  },
+  Object {
+    "birthDate": 1157,
+    "bornToId": 4,
+    "deathDate": 1199,
+    "gender": "M",
+    "id": 11,
+    "isMonarch": 1,
+    "name": "Richard I",
+    "title": "King of England",
+  },
+  Object {
+    "birthDate": 1166,
+    "bornToId": 4,
+    "deathDate": 1216,
+    "gender": "M",
+    "id": 12,
+    "isMonarch": 1,
+    "name": "John I",
+    "title": "King of England",
+  },
+]
+`;
+
+exports[`PartnerModel unassignChildren 1`] = `Array []`;
