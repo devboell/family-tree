@@ -5,18 +5,23 @@
   ],
   "collectCoverageFrom": [
     "src/client/**/*.{js,jsx}",
+    "src/data/**/*.js",
     "!src/client/**/actionTypes.js",
     "!src/client/configureStore.js",
     "!src/client/globalStyles.js",
     "!src/client/main.js",
     "!src/client/initClient.js",
     "!src/client/initStore.js",
-    "!src/client/reducers.js"
+    "!src/client/reducers.js",
+    "!src/data/connectors/index.js",
+    "!src/data/resolvers/index.js",
+    "!src/data/schema/index.js"
   ],
   "moduleDirectories": [
     "node_modules",
     "src",
-    "src/client"
+    "src/client",
+    "src/data"
   ],
   "roots": ["<rootDir>/src"],
   "testRegex": "tests/.*\\.test\\.js$",

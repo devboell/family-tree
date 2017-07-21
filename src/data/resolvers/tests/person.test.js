@@ -44,4 +44,18 @@ describe('person, resolvers', () => {
     expect(updatedPerson).toMatchSnapshot()
     // TODO:  test relation creation/deletion
   })
+
+  it('removePerson', async () => {
+    const personData = { id: 1 }
+    const result = await person.removePerson(undefined, personData)
+    expect(result).toBe(true)
+    // TODO:  test relation creation/deletion
+  })
+
+  it('removePerson, no partners', async () => {
+    const personData = { id: 17 }
+    const result = await person.removePerson(undefined, personData)
+    expect(result).toBe(true)
+    // TODO:  test relation creation/deletion
+  })
 })

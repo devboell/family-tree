@@ -36,10 +36,43 @@ describe('partner, resolvers', () => {
     expect(partnerIds).toMatchSnapshot()
   })
 
-  it('updatePartners', async () => {
+  it('updatePartners, one partner added', async () => {
+    const partnerInputs = [
+      { partnerId: 5, relationId: 2 },
+      { partnerId: 14, relationId: 5 },
+      { partnerId: 7, relationId: null },
+    ]
+    await partner.updatePartners(4, partnerInputs)
+    const partnerIds = await partner.partnerIds({ id: 4 })
+
+    expect(partnerIds).toMatchSnapshot()
+  })
+
+  it('updatePartners, one partner deleted and one added', async () => {
     const partnerInputs = [
       { partnerId: 14, relationId: 5 },
       { partnerId: 7, relationId: null },
+    ]
+    await partner.updatePartners(4, partnerInputs)
+    const partnerIds = await partner.partnerIds({ id: 4 })
+
+    expect(partnerIds).toMatchSnapshot()
+  })
+
+  it('updatePartners, one partner deleted', async () => {
+    const partnerInputs = [
+      { partnerId: 14, relationId: 5 },
+    ]
+    await partner.updatePartners(4, partnerInputs)
+    const partnerIds = await partner.partnerIds({ id: 4 })
+
+    expect(partnerIds).toMatchSnapshot()
+  })
+
+  it('updatePartners, no changes', async () => {
+    const partnerInputs = [
+      { partnerId: 5, relationId: 2 },
+      { partnerId: 14, relationId: 5 },
     ]
     await partner.updatePartners(4, partnerInputs)
     const partnerIds = await partner.partnerIds({ id: 4 })

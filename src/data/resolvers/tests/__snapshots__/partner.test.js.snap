@@ -70,7 +70,28 @@ Array [
 ]
 `;
 
-exports[`partner, resolvers updatePartners 1`] = `
+exports[`partner, resolvers updatePartners, no changes 1`] = `
+Array [
+  5,
+  14,
+]
+`;
+
+exports[`partner, resolvers updatePartners, one partner added 1`] = `
+Array [
+  5,
+  14,
+  7,
+]
+`;
+
+exports[`partner, resolvers updatePartners, one partner deleted 1`] = `
+Array [
+  14,
+]
+`;
+
+exports[`partner, resolvers updatePartners, one partner deleted and one added 1`] = `
 Array [
   14,
   7,
