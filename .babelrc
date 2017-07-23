@@ -1,16 +1,17 @@
 {
-  "plugins": ["transform-object-rest-spread"],
+  "plugins": ["transform-object-rest-spread", "transform-es2015-modules-commonjs"],
   "env": {
     "production": {
-      "presets": [["env", { "modules": false }], "react"]
+      "presets": [["env", { "modules": false }], "react"],
+      "plugins": ["transform-async-to-generator"]
     },
     "development": {
       "presets": [["env", { "modules": false }], "react"],
-      "plugins": ["react-hot-loader/babel", "transform-es2015-modules-commonjs"]
+      "plugins": ["react-hot-loader/babel"]
     },
     "test": {
       "presets": ["env", "react"],
-      "plugins": ["transform-es2015-modules-commonjs", "istanbul"]
+      "plugins": ["istanbul"]
     }
   }
 }

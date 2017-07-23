@@ -31,6 +31,12 @@
         "NODE_ENV": "production"
       }
     },
+    "build:db": {
+      "command": "npm run seed",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
     "start": {
       "command": "node dist/server",
       "env": {
@@ -39,7 +45,7 @@
     }
   },
   "scripts": {
-    "postinstall": "bnr build:clean && bnr build:client && bnr build:server && bnr build:data",
+    "postinstall": "bnr build:clean && bnr build:client && bnr build:server && bnr build:data && bnr build:db",
     "start": "bnr start",
     "dev": "bnr dev",
     "build:clean": "bnr build:clean",
@@ -54,6 +60,7 @@
   "dependencies": {
     "babel-cli": "^6.24.1",
     "babel-plugin-istanbul": "next",
+    "babel-polyfill": "^6.23.0",
     "body-parser": "^1.17.2",
     "copy-webpack-plugin": "^4.0.1",
     "enzyme": "^2.8.2",
