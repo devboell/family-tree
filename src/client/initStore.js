@@ -1,4 +1,5 @@
 import { createStore, compose, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
 
 import rootReducer from './reducers'
 
@@ -17,7 +18,7 @@ const initStore = (client) => {
   const store = createStore(
     rootReducer(client),
     {},
-    composeEnhancers(applyMiddleware(client.middleware())))
+    composeEnhancers(applyMiddleware(client.middleware(), thunk)))
 
   if (process.env.NODE_ENV !== 'production') {
     if (module.hot) {
