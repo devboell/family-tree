@@ -1,6 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const CopyWebpackPlugin = require('copy-webpack-plugin')
 const prodConfig = require('./config/webpack.prod.config')
 const devConfig = require('./config/webpack.dev.config')
 const merge = require('webpack-merge')
@@ -48,9 +48,6 @@ const commonConfig = {
     new HtmlWebpackPlugin({
       template: 'index.html',
     }),
-    new CopyWebpackPlugin([
-      { from: 'images', to: 'images' },
-    ]),
   ],
 
   resolve: {
