@@ -8,8 +8,8 @@ import Header from 'components/Header'
 const App = () => (
   <div>
     <Header />
-    <Route path="/" exact component={FamilyTreePage} />
-    <Route path="/editor" exact component={EditorPage} />
+    <Route exact path="/" component={FamilyTreePage} />
+    <Route exact path="/editor" component={EditorPage} />
   </div>
 )
 
