@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { NavLink } from 'react-router-dom'
+import StyledNavLink from './StyledNavLink'
 
 const Header = () =>
   <div>
-    <NavLink to="/">Tree</NavLink>
-    <NavLink to="/editor">Editor</NavLink>
+    <StyledNavLink exact to="/"><h3>Tree</h3></StyledNavLink>
+    <StyledNavLink to="/editor"><h3>Editor</h3></StyledNavLink>
   </div>
 
 
