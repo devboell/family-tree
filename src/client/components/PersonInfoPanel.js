@@ -6,8 +6,10 @@ const PersonInfoPanel = styled.div`
   width: ${props => props.width}px;
   height: ${props => props.height}px;
   > p {
-      margin-left: 5px;
+      margin-top: 5px;
+      text-align: center;
       font-size: 14px;
+      color: blue;
     }
 `
 
