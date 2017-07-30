@@ -5,7 +5,7 @@
   "license": "MIT",
   "betterScripts": {
     "dev": {
-      "command": "nodemon src/server --exec babel-node --presets=env,react -w src/server -w src/data",
+      "command": "nodemon src/server --exec babel-node --presets=env -w src/server -w src/data",
       "env": {
         "NODE_ENV": "development"
       }
@@ -20,13 +20,13 @@
       }
     },
     "build:server": {
-      "command": "babel src/server -d dist/server --presets=env,react",
+      "command": "babel src/server -d dist/server --presets=env",
       "env": {
         "NODE_ENV": "production"
       }
     },
     "build:data": {
-      "command": "babel src/data -d dist/data --presets=env,react",
+      "command": "babel src/data -d dist/data --presets=env",
       "env": {
         "NODE_ENV": "production"
       }
@@ -54,8 +54,8 @@
     "build:data": "bnr build:data",
     "test": "jest --coverage -c .jestrc.json",
     "test:watch": "jest --watchAll -c .jestrc.json",
-    "migrate": "babel-node node_modules/.bin/knex migrate:latest",
-    "seed": "npm run migrate && babel-node node_modules/.bin/knex seed:run"
+    "migrate": "babel-node --presets=env node_modules/.bin/knex migrate:latest",
+    "seed": "npm run migrate && babel-node --presets=env node_modules/.bin/knex seed:run"
   },
   "dependencies": {
     "babel-cli": "^6.24.1",

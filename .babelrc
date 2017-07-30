@@ -1,5 +1,5 @@
 {
-  "plugins": ["transform-object-rest-spread", "transform-es2015-modules-commonjs"],
+  "plugins": ["transform-object-rest-spread"],
   "env": {
     "production": {
       "presets": [["env", { "modules": false }], "react"],
