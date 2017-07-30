@@ -1,10 +1,10 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 
-import SVGRelation from './SVGRelation'
-import SVGRelationLink from './SVGRelationLink'
+import SVGRelation from 'components/SVGRelation'
+import SVGRelationLink from 'components/SVGRelationLink'
 
-import PersonInfoPanel from './PersonInfoPanel'
+import PersonInfoPanel from 'components/PersonInfoPanel'
 
 
 const SVGNode = ({

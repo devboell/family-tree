@@ -1,0 +1,484 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SVGTree component renders a tree 1`] = `
+<SVGTree
+  treeData={
+    Object {
+      "level": 0,
+      "partners": Array [
+        Object {
+          "children": Array [
+            Object {
+              "level": 1,
+              "partners": Array [],
+              "subTreeWidth": 0,
+              "treeHeight": 0,
+              "value": "Tom",
+              "width": 110,
+            },
+            Object {
+              "level": 1,
+              "partners": Array [],
+              "subTreeWidth": 0,
+              "treeHeight": 0,
+              "value": "Dick",
+              "width": 110,
+            },
+            Object {
+              "level": 1,
+              "partners": Array [],
+              "subTreeWidth": 0,
+              "treeHeight": 0,
+              "value": "Harry",
+              "width": 110,
+            },
+          ],
+          "childrenWidth": Array [
+            110,
+            110,
+            110,
+          ],
+          "subTreeWidth": 330,
+          "value": "Mary",
+          "width": 80,
+        },
+      ],
+      "subTreeWidth": 330,
+      "treeHeight": 1,
+      "value": "John",
+      "width": 110,
+    }
+  }
+>
+  <svg
+    height={230}
+    width={340}
+  >
+    <SVGNode
+      boxHeight={60}
+      boxWidth={80}
+      linkTo={null}
+      marginX={30}
+      marginY={50}
+      node={
+        Object {
+          "level": 0,
+          "partners": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "level": 1,
+                  "partners": Array [],
+                  "subTreeWidth": 0,
+                  "treeHeight": 0,
+                  "value": "Tom",
+                  "width": 110,
+                },
+                Object {
+                  "level": 1,
+                  "partners": Array [],
+                  "subTreeWidth": 0,
+                  "treeHeight": 0,
+                  "value": "Dick",
+                  "width": 110,
+                },
+                Object {
+                  "level": 1,
+                  "partners": Array [],
+                  "subTreeWidth": 0,
+                  "treeHeight": 0,
+                  "value": "Harry",
+                  "width": 110,
+                },
+              ],
+              "childrenWidth": Array [
+                110,
+                110,
+                110,
+              ],
+              "subTreeWidth": 330,
+              "value": "Mary",
+              "width": 80,
+            },
+          ],
+          "subTreeWidth": 330,
+          "treeHeight": 1,
+          "value": "John",
+          "width": 110,
+        }
+      }
+      offsetX={0}
+    >
+      <g
+        fill="none"
+        stroke="black"
+        strokeWidth="1"
+        style={
+          Object {
+            "shapeRendering": "crispEdges",
+          }
+        }
+      >
+        <foreignObject
+          height={60}
+          width={80}
+          x={85}
+          y={0}
+        >
+          <styled.div
+            height={60}
+            width={80}
+          >
+            <div
+              className="sc-bdVaJa iTJoaa"
+              height={60}
+              width={80}
+            >
+              <p>
+                John
+              </p>
+            </div>
+          </styled.div>
+        </foreignObject>
+        <g>
+          <SVGRelationLink
+            originX={195}
+            originY={30}
+            targetX={167}
+          >
+            <path
+              d="M 195 30 H 167"
+              stroke="red"
+            />
+          </SVGRelationLink>
+          <SVGRelation
+            boxHeight={60}
+            boxWidth={80}
+            marginX={30}
+            marginY={50}
+            offsetX={0}
+            relationNode={
+              Object {
+                "children": Array [
+                  Object {
+                    "level": 1,
+                    "partners": Array [],
+                    "subTreeWidth": 0,
+                    "treeHeight": 0,
+                    "value": "Tom",
+                    "width": 110,
+                  },
+                  Object {
+                    "level": 1,
+                    "partners": Array [],
+                    "subTreeWidth": 0,
+                    "treeHeight": 0,
+                    "value": "Dick",
+                    "width": 110,
+                  },
+                  Object {
+                    "level": 1,
+                    "partners": Array [],
+                    "subTreeWidth": 0,
+                    "treeHeight": 0,
+                    "value": "Harry",
+                    "width": 110,
+                  },
+                ],
+                "childrenWidth": Array [
+                  110,
+                  110,
+                  110,
+                ],
+                "subTreeWidth": 330,
+                "value": "Mary",
+                "width": 80,
+              }
+            }
+            y={0}
+          >
+            <g>
+              <foreignObject
+                height={60}
+                width={80}
+                x={195}
+                y={0}
+              >
+                <styled.div
+                  height={60}
+                  width={80}
+                >
+                  <div
+                    className="sc-bdVaJa iTJoaa"
+                    height={60}
+                    width={80}
+                  >
+                    <p>
+                      Mary
+                    </p>
+                  </div>
+                </styled.div>
+              </foreignObject>
+              <SVGNode
+                boxHeight={60}
+                boxWidth={80}
+                linkTo={
+                  Object {
+                    "x": 180,
+                    "y": 30,
+                  }
+                }
+                marginX={30}
+                marginY={50}
+                node={
+                  Object {
+                    "level": 1,
+                    "partners": Array [],
+                    "subTreeWidth": 0,
+                    "treeHeight": 0,
+                    "value": "Tom",
+                    "width": 110,
+                  }
+                }
+                offsetX={0}
+              >
+                <g
+                  fill="none"
+                  stroke="black"
+                  strokeWidth="1"
+                  style={
+                    Object {
+                      "shapeRendering": "crispEdges",
+                    }
+                  }
+                >
+                  <foreignObject
+                    height={60}
+                    width={80}
+                    x={30}
+                    y={110}
+                  >
+                    <styled.div
+                      height={60}
+                      width={80}
+                    >
+                      <div
+                        className="sc-bdVaJa iTJoaa"
+                        height={60}
+                        width={80}
+                      >
+                        <p>
+                          Tom
+                        </p>
+                      </div>
+                    </styled.div>
+                  </foreignObject>
+                  <path
+                    d="M 70 110 V 85 H 180 V 30"
+                  />
+                </g>
+              </SVGNode>
+              <SVGNode
+                boxHeight={60}
+                boxWidth={80}
+                linkTo={
+                  Object {
+                    "x": 180,
+                    "y": 30,
+                  }
+                }
+                marginX={30}
+                marginY={50}
+                node={
+                  Object {
+                    "level": 1,
+                    "partners": Array [],
+                    "subTreeWidth": 0,
+                    "treeHeight": 0,
+                    "value": "Dick",
+                    "width": 110,
+                  }
+                }
+                offsetX={110}
+              >
+                <g
+                  fill="none"
+                  stroke="black"
+                  strokeWidth="1"
+                  style={
+                    Object {
+                      "shapeRendering": "crispEdges",
+                    }
+                  }
+                >
+                  <foreignObject
+                    height={60}
+                    width={80}
+                    x={140}
+                    y={110}
+                  >
+                    <styled.div
+                      height={60}
+                      width={80}
+                    >
+                      <div
+                        className="sc-bdVaJa iTJoaa"
+                        height={60}
+                        width={80}
+                      >
+                        <p>
+                          Dick
+                        </p>
+                      </div>
+                    </styled.div>
+                  </foreignObject>
+                  <path
+                    d="M 180 110 V 85 H 180 V 30"
+                  />
+                </g>
+              </SVGNode>
+              <SVGNode
+                boxHeight={60}
+                boxWidth={80}
+                linkTo={
+                  Object {
+                    "x": 180,
+                    "y": 30,
+                  }
+                }
+                marginX={30}
+                marginY={50}
+                node={
+                  Object {
+                    "level": 1,
+                    "partners": Array [],
+                    "subTreeWidth": 0,
+                    "treeHeight": 0,
+                    "value": "Harry",
+                    "width": 110,
+                  }
+                }
+                offsetX={220}
+              >
+                <g
+                  fill="none"
+                  stroke="black"
+                  strokeWidth="1"
+                  style={
+                    Object {
+                      "shapeRendering": "crispEdges",
+                    }
+                  }
+                >
+                  <foreignObject
+                    height={60}
+                    width={80}
+                    x={250}
+                    y={110}
+                  >
+                    <styled.div
+                      height={60}
+                      width={80}
+                    >
+                      <div
+                        className="sc-bdVaJa iTJoaa"
+                        height={60}
+                        width={80}
+                      >
+                        <p>
+                          Harry
+                        </p>
+                      </div>
+                    </styled.div>
+                  </foreignObject>
+                  <path
+                    d="M 290 110 V 85 H 180 V 30"
+                  />
+                </g>
+              </SVGNode>
+            </g>
+          </SVGRelation>
+        </g>
+      </g>
+    </SVGNode>
+  </svg>
+</SVGTree>
+`;
+
+exports[`SVGTree transformWithPartners transforms root node tree 1`] = `
+Object {
+  "level": 0,
+  "partners": Array [],
+  "subTreeWidth": 0,
+  "treeHeight": 0,
+  "value": "John",
+  "width": 110,
+}
+`;
+
+exports[`SVGTree transformWithPartners transforms root node with partner and children 1`] = `
+Object {
+  "level": 0,
+  "partners": Array [
+    Object {
+      "children": Array [
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "subTreeWidth": 0,
+          "treeHeight": 0,
+          "value": "Tom",
+          "width": 110,
+        },
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "subTreeWidth": 0,
+          "treeHeight": 0,
+          "value": "Dick",
+          "width": 110,
+        },
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "subTreeWidth": 0,
+          "treeHeight": 0,
+          "value": "Harry",
+          "width": 110,
+        },
+      ],
+      "childrenWidth": Array [
+        110,
+        110,
+        110,
+      ],
+      "subTreeWidth": 330,
+      "value": "Mary",
+      "width": 80,
+    },
+  ],
+  "subTreeWidth": 330,
+  "treeHeight": 1,
+  "value": "John",
+  "width": 110,
+}
+`;
+
+exports[`SVGTree transformWithPartners transforms root node with partner tree 1`] = `
+Object {
+  "level": 0,
+  "partners": Array [
+    Object {
+      "children": Array [],
+      "childrenWidth": Array [],
+      "subTreeWidth": 220,
+      "value": "Mary",
+      "width": 80,
+    },
+  ],
+  "subTreeWidth": 220,
+  "treeHeight": 0,
+  "value": "John",
+  "width": 110,
+}
+`;
