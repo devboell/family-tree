@@ -16,8 +16,8 @@ const RelationEditor = ({
 )
 
 RelationEditor.propTypes = {
-  fields: PropTypes.object.isRequired,
-  persons: PropTypes.array.isRequired,
+  fields: PropTypes.shape({}).isRequired,
+  persons: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 }
 
 export default RelationEditor
