@@ -9,6 +9,7 @@ import EditorFields from './EditorFields'
 import PersonSection from './PersonSection'
 import RelationSection from './RelationSection'
 import TextField from '../TextField'
+import SubmitButton from './SubmitButton'
 
 const relationPersons = relation =>
   `${relation.person1.name} - ${relation.person2.name}`
@@ -72,7 +73,7 @@ const PersonEditor = ({
             <FieldArray name="partners" component={RelationEditor} {...{ persons }} />
           </RelationSection>
         </EditorFields>
-        <button type="submit">Submit</button>
+        <SubmitButton type="submit">Submit</SubmitButton>
       </Form>
     : <div />
     }

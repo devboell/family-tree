@@ -11,6 +11,7 @@ const Wrapper = styled.button`
   text-decoration: none;
   display: inline-block;
   font-size: 12px;
+  cursor: pointer;
 
   &:hover {
     background-color: gray;
