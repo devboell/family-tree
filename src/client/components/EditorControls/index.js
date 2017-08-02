@@ -33,7 +33,7 @@ const EditorControls = ({
 
 EditorControls.propTypes = {
   editMode: PropTypes.string.isRequired,
-  selectedPerson: PropTypes.object.isRequired,
+  selectedPerson: PropTypes.shape({}).isRequired,
   onCreatePerson: PropTypes.func.isRequired,
   onRemovePerson: PropTypes.func.isRequired,
   removePersonMutation: PropTypes.func.isRequired,
