@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should transform singleRoot 1`] = `
+Object {
+  "level": 0,
+  "partners": Array [],
+  "totalHeight": 100,
+  "totalWidth": 100,
+  "value": "root",
+}
+`;
+
+exports[`should transform withPartner 1`] = `
+Object {
+  "level": 0,
+  "partners": Array [
+    Object {
+      "children": Array [],
+      "level": 0,
+      "totalHeight": 100,
+      "totalWidth": 200,
+      "value": "partner root",
+    },
+  ],
+  "totalHeight": 100,
+  "totalWidth": 200,
+  "value": "root",
+}
+`;
+
+exports[`should transform withTwoPartners 1`] = `
+Object {
+  "level": 0,
+  "partners": Array [
+    Object {
+      "children": Array [],
+      "level": 0,
+      "totalHeight": 100,
+      "totalWidth": 200,
+      "value": "partner 1 root",
+    },
+    Object {
+      "children": Array [],
+      "level": 0,
+      "totalHeight": 100,
+      "totalWidth": 200,
+      "value": "partner 2 root",
+    },
+  ],
+  "totalHeight": 100,
+  "totalWidth": 400,
+  "value": "root",
+}
+`;

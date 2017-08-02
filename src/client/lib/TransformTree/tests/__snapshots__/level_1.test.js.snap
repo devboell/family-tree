@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should transform family1 1`] = `
+Object {
+  "level": 0,
+  "partners": Array [
+    Object {
+      "children": Array [
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "totalHeight": 100,
+          "totalWidth": 100,
+          "value": "child 1 - level 1",
+        },
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "totalHeight": 100,
+          "totalWidth": 100,
+          "value": "child 2 - level 1",
+        },
+      ],
+      "level": 0,
+      "totalHeight": 200,
+      "totalWidth": 200,
+      "value": "root - partner 1",
+    },
+    Object {
+      "children": Array [],
+      "level": 0,
+      "totalHeight": 100,
+      "totalWidth": 200,
+      "value": "root - partner 2",
+    },
+  ],
+  "totalHeight": 200,
+  "totalWidth": 400,
+  "value": "root",
+}
+`;
+
+exports[`should transform family2 1`] = `
+Object {
+  "level": 0,
+  "partners": Array [
+    Object {
+      "children": Array [
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "totalHeight": 100,
+          "totalWidth": 100,
+          "value": "child 1 - level 1",
+        },
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "totalHeight": 100,
+          "totalWidth": 100,
+          "value": "child 2 - level 1",
+        },
+      ],
+      "level": 0,
+      "totalHeight": 200,
+      "totalWidth": 200,
+      "value": "root - partner 1",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "totalHeight": 100,
+          "totalWidth": 100,
+          "value": "child 1 - level 1",
+        },
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "totalHeight": 100,
+          "totalWidth": 100,
+          "value": "child 2 - level 1",
+        },
+      ],
+      "level": 0,
+      "totalHeight": 200,
+      "totalWidth": 200,
+      "value": "root - partner 2",
+    },
+  ],
+  "totalHeight": 200,
+  "totalWidth": 400,
+  "value": "root",
+}
+`;
+
+exports[`should transform family3 1`] = `
+Object {
+  "level": 0,
+  "partners": Array [
+    Object {
+      "children": Array [
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "totalHeight": 100,
+          "totalWidth": 100,
+          "value": "child 1 - level 1",
+        },
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "totalHeight": 100,
+          "totalWidth": 100,
+          "value": "child 2 - level 1",
+        },
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "totalHeight": 100,
+          "totalWidth": 100,
+          "value": "child 3 - level 1",
+        },
+      ],
+      "level": 0,
+      "totalHeight": 200,
+      "totalWidth": 300,
+      "value": "root - partner 1",
+    },
+    Object {
+      "children": Array [],
+      "level": 0,
+      "totalHeight": 100,
+      "totalWidth": 200,
+      "value": "partner 2",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "totalHeight": 100,
+          "totalWidth": 100,
+          "value": "child 1 - level 1",
+        },
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "totalHeight": 100,
+          "totalWidth": 100,
+          "value": "child 2 - level 1",
+        },
+      ],
+      "level": 0,
+      "totalHeight": 200,
+      "totalWidth": 200,
+      "value": "root - partner 3",
+    },
+  ],
+  "totalHeight": 200,
+  "totalWidth": 700,
+  "value": "root",
+}
+`;
+
+exports[`should transform onePartnerOneChild 1`] = `
+Object {
+  "level": 0,
+  "partners": Array [
+    Object {
+      "children": Array [
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "totalHeight": 100,
+          "totalWidth": 100,
+          "value": "child 1 - level 1",
+        },
+      ],
+      "level": 0,
+      "totalHeight": 200,
+      "totalWidth": 200,
+      "value": "root - partner",
+    },
+  ],
+  "totalHeight": 200,
+  "totalWidth": 200,
+  "value": "root",
+}
+`;
+
+exports[`should transform onePartnerOneChild 2`] = `
+Object {
+  "level": 0,
+  "partners": Array [
+    Object {
+      "children": Array [
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "totalHeight": 100,
+          "totalWidth": 100,
+          "value": "child 1 - level 1",
+        },
+        Object {
+          "level": 1,
+          "partners": Array [],
+          "totalHeight": 100,
+          "totalWidth": 100,
+          "value": "child 2 - level 1",
+        },
+      ],
+      "level": 0,
+      "totalHeight": 200,
+      "totalWidth": 200,
+      "value": "root - partner",
+    },
+  ],
+  "totalHeight": 200,
+  "totalWidth": 200,
+  "value": "root",
+}
+`;

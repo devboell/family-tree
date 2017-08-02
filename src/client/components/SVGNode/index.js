@@ -1,97 +1,55 @@
 import React from 'react'
-import { PropTypes } from 'prop-types'
+import PropTypes from 'prop-types'
+import SVGNodeInfo from 'components/SVGNodeInfo'
+import SVGNodeLink from 'components/SVGNodeLink'
+import SVGPartnerNode from 'components/SVGPartnerNode'
 
-import SVGRelation from 'components/SVGRelation'
-import SVGRelationLink from 'components/SVGRelationLink'
+export const hasPartner = node => node.partners.length
+export const firstPartner = node => node.partners[0]
+export const cumulatedSubTreeWidths = node =>
+  node.partners.reduce((acc, cur) =>
+    [...acc, acc[acc.length - 1] + cur.totalWidth]
+  , [0])
 
-import PersonInfoPanel from 'components/PersonInfoPanel'
 
-
-const SVGNode = ({
-  node,
-  offsetX,
-  linkTo,
-  boxWidth,
-  marginX,
-  boxHeight,
-  marginY,
-}) => {
-  // if a  node has relation(s), it is placed to the left of the center
-  // of the subtree of the first relation.
-  const subTreeWidths = node.partners.map(relation => relation.subTreeWidth)
-  const x = subTreeWidths.length
-    ? offsetX + ((subTreeWidths[0] / 2) - boxWidth)
+const SVGNode = ({ node, offsetX, linkTo, dimensions }) => {
+  const { boxWidth, boxHeight, marginX, marginY } = dimensions
+  const x = hasPartner(node)
+    ? offsetX + ((firstPartner(node).totalWidth / 2) - boxWidth)
     : offsetX + marginX
-
-
   const y = node.level * (boxHeight + marginY)
-  const midPointOffset = arr =>
-    // eslint-disable-next-line no-confusing-arrow
-    arr.reduce((acc, val, i) =>
-    i === arr.length - 1
-      ? acc + (val / 2)
-      : acc + val
-    , 0)
-
-
-  const midPoint = i => midPointOffset(subTreeWidths.slice(0, i + 1))
-  const prevMidPoint = i => midPointOffset(subTreeWidths.slice(0, i))
-
-  const target = i => (
-    i > 0
-    ? offsetX + prevMidPoint(i) + marginX + boxWidth
-    : (offsetX + (subTreeWidths[0] / 2))
-  )
-
-  const prevRelOffset = i => node.partners.slice(0, i)
-    .reduce((acc, rel) => acc + rel.subTreeWidth, 0)
 
   return (
     <g style={{ shapeRendering: 'crispEdges' }} stroke="black" strokeWidth="1" fill="none">
-      <foreignObject
-        {...{ x }}
-        {...{ y }}
-        width={boxWidth}
-        height={boxHeight}
-      >
-        <PersonInfoPanel
-          width={boxWidth}
-          height={boxHeight}
-        >
-          <p>{node.value}</p>
-        </PersonInfoPanel>
-      </foreignObject>
-      {(linkTo)
-        ? <path d={`M ${x + (boxWidth / 2)} ${y} V ${y - (marginY / 2)} H ${linkTo.x} V ${linkTo.y}`} />
+      <SVGNodeInfo
+        {...{ x, y, boxWidth, boxHeight }}
+        info={node.value}
+      />
+      <SVGNodeLink
+        {...{ x, y, dimensions, linkTo }}
+
+      />
+      {hasPartner(node)
+        ? node.partners.map((partner, i) => (
+          <SVGPartnerNode
+            key={`partner-${partner.value}`}
+            node={partner}
+            offsetX={offsetX + cumulatedSubTreeWidths(node)[i]}
+            previousSubTreeWidth={(i > 0 && node.partners[i - 1].totalWidth) || 0}
+            {...{ y, dimensions }}
+          />
+        ))
         : null
       }
-      {node.partners.map((relation, i) => (
-        <g key={`relation-${relation.value}`}>
-          <SVGRelationLink
-            originX={offsetX + midPoint(i) + marginX}
-            originY={y + (boxHeight / 2)}
-            targetX={target(i) + 2}
-          />
-          <SVGRelation
-            relationNode={relation}
-            {...{ y }}
-            offsetX={offsetX + prevRelOffset(i)}
-            {...{ boxWidth, marginX, boxHeight, marginY }}
-          />
-        </g>
-      ))}
     </g>
   )
 }
 
 SVGNode.propTypes = {
-  node: PropTypes.object.isRequired,
+  node: PropTypes.shape({}).isRequired,
   offsetX: PropTypes.number.isRequired,
-  linkTo: PropTypes.object,
-  boxWidth: PropTypes.number.isRequired,
-  marginX: PropTypes.number.isRequired,
-  boxHeight: PropTypes.number.isRequired,
-  marginY: PropTypes.number.isRequired,
+  dimensions: PropTypes.shape({}).isRequired,
+  linkTo: PropTypes.shape({}), // eslint-disable-line
 }
 
 
