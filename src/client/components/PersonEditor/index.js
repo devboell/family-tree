@@ -82,8 +82,8 @@ const PersonEditor = ({
 PersonEditor.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   disabled: PropTypes.bool.isRequired,
-  persons: PropTypes.array.isRequired,
-  relations: PropTypes.array.isRequired,
+  persons: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  relations: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 }
 
 export default reduxForm({
