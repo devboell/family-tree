@@ -3,6 +3,7 @@ import { PropTypes } from 'prop-types'
 import SVGTree from 'components/SVGTree'
 import { transformTree } from 'lib/TransformTree'
 import enhancers from './enhancers'
+import Wrapper from './Wrapper'
 
 const dimensions = {
   boxWidth: 80,
@@ -18,10 +19,12 @@ const FamilyTreePage = ({
   familyTreeQuery.loading
   ? <div>loading ...</div>
   :
-  <SVGTree
-    treeData={transformTree(familyTree.familyTree, dimensions)}
-    {...{ dimensions }}
-  />
+  <Wrapper>
+    <SVGTree
+      treeData={transformTree(familyTree.familyTree, dimensions)}
+      {...{ dimensions }}
+    />
+  </Wrapper>
 )
 
 FamilyTreePage.propTypes = {
