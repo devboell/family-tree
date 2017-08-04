@@ -1,7 +1,7 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 
-import { editModes } from '../../containers/EditorPage/constants'
+import { editModes } from 'containers/EditorPage/constants'
 
 import Wrapper from './Wrapper'
 import Button from './Button'
