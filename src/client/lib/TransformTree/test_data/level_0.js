@@ -1,27 +1,33 @@
 export const singleRoot = {
-  value: 'root',
+  name: 'root',
   partners: [],
 }
 
 export const withPartner = {
-  value: 'root',
+  name: 'root',
   partners: [
     {
-      value: 'partner root',
+      partner: {
+        name: 'partner root',
+      },
       children: [],
     },
   ],
 }
 
 export const withTwoPartners = {
-  value: 'root',
+  name: 'root',
   partners: [
     {
-      value: 'partner 1 root',
+      partner: {
+        name: 'partner 1 root',
+      },
       children: [],
     },
     {
-      value: 'partner 2 root',
+      partner: {
+        name: 'partner 2 root',
+      },
       children: [],
     },
   ],

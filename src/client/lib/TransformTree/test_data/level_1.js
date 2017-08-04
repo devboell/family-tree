@@ -1,11 +1,13 @@
 export const onePartnerOneChild = {
-  value: 'root',
+  name: 'root',
   partners: [
     {
-      value: 'root - partner',
+      partner: {
+        name: 'root - partner',
+      },
       children: [
         {
-          value: 'child 1 - level 1',
+          name: 'child 1 - level 1',
           partners: [],
         },
       ],
@@ -14,17 +16,19 @@ export const onePartnerOneChild = {
 }
 
 export const onePartnerTwoChildren = {
-  value: 'root',
+  name: 'root',
   partners: [
     {
-      value: 'root - partner',
+      partner: {
+        name: 'root - partner',
+      },
       children: [
         {
-          value: 'child 1 - level 1',
+          name: 'child 1 - level 1',
           partners: [],
         },
         {
-          value: 'child 2 - level 1',
+          name: 'child 2 - level 1',
           partners: [],
         },
       ],
@@ -33,23 +37,27 @@ export const onePartnerTwoChildren = {
 }
 
 export const family1 = {
-  value: 'root',
+  name: 'root',
   partners: [
     {
-      value: 'root - partner 1',
+      partner: {
+        name: 'root - partner 1',
+      },
       children: [
         {
-          value: 'child 1 - level 1',
+          name: 'child 1 - level 1',
           partners: [],
         },
         {
-          value: 'child 2 - level 1',
+          name: 'child 2 - level 1',
           partners: [],
         },
       ],
     },
     {
-      value: 'root - partner 2',
+      partner: {
+        name: 'root - partner 2',
+      },
       children: [],
     },
   ],
@@ -57,30 +65,34 @@ export const family1 = {
 
 
 export const family2 = {
-  value: 'root',
+  name: 'root',
   partners: [
     {
-      value: 'root - partner 1',
+      partner: {
+        name: 'root - partner 1',
+      },
       children: [
         {
-          value: 'child 1 - level 1',
+          name: 'child 1 - level 1',
           partners: [],
         },
         {
-          value: 'child 2 - level 1',
+          name: 'child 2 - level 1',
           partners: [],
         },
       ],
     },
     {
-      value: 'root - partner 2',
+      partner: {
+        name: 'root - partner 2',
+      },
       children: [
         {
-          value: 'child 1 - level 1',
+          name: 'child 1 - level 1',
           partners: [],
         },
         {
-          value: 'child 2 - level 1',
+          name: 'child 2 - level 1',
           partners: [],
         },
       ],
@@ -89,38 +101,44 @@ export const family2 = {
 }
 
 export const family3 = {
-  value: 'root',
+  name: 'root',
   partners: [
     {
-      value: 'root - partner 1',
+      partner: {
+        name: 'root - partner 1',
+      },
       children: [
         {
-          value: 'child 1 - level 1',
+          name: 'child 1 - level 1',
           partners: [],
         },
         {
-          value: 'child 2 - level 1',
+          name: 'child 2 - level 1',
           partners: [],
         },
         {
-          value: 'child 3 - level 1',
+          name: 'child 3 - level 1',
           partners: [],
         },
       ],
     },
     {
-      value: 'partner 2',
+      partner: {
+        name: 'partner 2',
+      },
       children: [],
     },
     {
-      value: 'root - partner 3',
+      partner: {
+        name: 'root - partner 3',
+      },
       children: [
         {
-          value: 'child 1 - level 1',
+          name: 'child 1 - level 1',
           partners: [],
         },
         {
-          value: 'child 2 - level 1',
+          name: 'child 2 - level 1',
           partners: [],
         },
       ],
