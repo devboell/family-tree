@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditorControls component renders in create mode 1`] = `
+<styled.div>
+  <styled.button
+    onClick={[Function]}
+  >
+    New
+  </styled.button>
+</styled.div>
+`;
+
+exports[`EditorControls component renders in update mode 1`] = `
+<styled.div>
+  <styled.button
+    onClick={[Function]}
+  >
+    New
+  </styled.button>
+  <styled.button
+    onClick={[Function]}
+  >
+    Remove
+  </styled.button>
+</styled.div>
+`;
