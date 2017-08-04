@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonEditor component disabled = false 1`] = `
+<div>
+  <styled.form
+    onSubmit={[Function]}
+  >
+    <styled.div>
+      <styled.section>
+        <Field
+          component="input"
+          name="id"
+          type="hidden"
+        />
+        <styled.div>
+          <styled.label
+            htmlFor="name"
+          >
+            Name
+          </styled.label>
+          <Field
+            component={[Function]}
+            name="name"
+          />
+        </styled.div>
+        <styled.div>
+          <styled.label
+            htmlFor="title"
+          >
+            Title
+          </styled.label>
+          <Field
+            component={[Function]}
+            name="title"
+          />
+        </styled.div>
+        <styled.div>
+          <styled.label
+            htmlFor="birthDate"
+          >
+            Year of Birth
+          </styled.label>
+          <Field
+            component={[Function]}
+            name="birthDate"
+          />
+        </styled.div>
+        <styled.div>
+          <styled.label
+            htmlFor="deathDate"
+          >
+            Year of Death
+          </styled.label>
+          <Field
+            component={[Function]}
+            name="deathDate"
+          />
+        </styled.div>
+        <styled.div>
+          <styled.label
+            htmlFor="gender"
+          >
+            Gender
+          </styled.label>
+          <Field
+            component="select"
+            name="gender"
+          >
+            <option
+              value="M"
+            >
+              Male
+            </option>
+            <option
+              value="F"
+            >
+              Female
+            </option>
+          </Field>
+        </styled.div>
+        <styled.div>
+          <styled.label
+            htmlFor="isMonarch"
+          >
+            Monarch
+          </styled.label>
+          <Field
+            component="input"
+            name="isMonarch"
+            type="checkbox"
+          />
+        </styled.div>
+        <styled.div>
+          <styled.label
+            htmlFor="bornToId"
+          >
+            Parents
+          </styled.label>
+          <Field
+            component="select"
+            name="bornToId"
+          >
+            <option
+              value={null}
+            >
+              root person - no parents
+            </option>
+            <option>
+              John - Mary
+            </option>
+          </Field>
+        </styled.div>
+      </styled.section>
+      <styled.section>
+        <FieldArray
+          component={[Function]}
+          name="partners"
+          persons={Array []}
+        />
+      </styled.section>
+    </styled.div>
+    <styled.button
+      type="submit"
+    >
+      Submit
+    </styled.button>
+  </styled.form>
+</div>
+`;
+
+exports[`PersonEditor component disabled = true 1`] = `
+<div>
+  <div />
+</div>
+`;
+
+exports[`renders PersonEditor react-form 1`] = `
+<Connect(Form(Component))
+  destroyOnUnmount={true}
+  enableReinitialize={true}
+  forceUnregisterOnUnmount={false}
+  form="personForm"
+  getFormState={[Function]}
+  initialValues={
+    Object {
+      "name": "John",
+      "title": "",
+    }
+  }
+  keepDirtyOnReinitialize={false}
+  onSubmit={[Function]}
+  persistentSubmitErrors={false}
+  pure={true}
+  shouldAsyncValidate={[Function]}
+  shouldValidate={[Function]}
+  touchOnBlur={true}
+  touchOnChange={false}
+/>
+`;

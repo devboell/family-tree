@@ -14,7 +14,7 @@ import SubmitButton from './SubmitButton'
 const relationPersons = relation =>
   `${relation.person1.name} - ${relation.person2.name}`
 
-const PersonEditor = ({
+export const PersonEditor = ({
   handleSubmit,
   disabled,
   persons,
