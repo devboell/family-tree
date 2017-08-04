@@ -1,5 +1,6 @@
 import { gql, graphql, compose } from 'react-apollo'
 
+// TODO: unused for now
 const personsQuery = gql`
   query personsQuery {
     persons {
