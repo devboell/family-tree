@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Header component 1`] = `
+<div>
+  <Styled(NavLink)
+    exact={true}
+    to="/"
+  >
+    <h3>
+      Tree
+    </h3>
+  </Styled(NavLink)>
+  <Styled(NavLink)
+    to="/editor"
+  >
+    <h3>
+      Editor
+    </h3>
+  </Styled(NavLink)>
+</div>
+`;
