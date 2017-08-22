@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Relations, renders without crashing 1`] = `
+<styled.div>
+  <Partners
+    fields={Object {}}
+  />
+  <AvailablePartners
+    fields={Object {}}
+    persons={Array []}
+  />
+</styled.div>
+`;

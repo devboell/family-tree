@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonList component 1`] = `
+<styled.ul>
+  <styled.li>
+    <styled.button
+      onClick={[Function]}
+    >
+      John
+    </styled.button>
+  </styled.li>
+  <styled.li>
+    <styled.button
+      onClick={[Function]}
+    >
+      Mary
+    </styled.button>
+  </styled.li>
+</styled.ul>
+`;
