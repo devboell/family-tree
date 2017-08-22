@@ -25,7 +25,7 @@ const convertPartnerValues = values => (
   }
 )
 
-const EditorPage = ({
+export const EditorPage = ({
   relationsQuery,
   personsQuery,
   relationsQuery: { relations },
