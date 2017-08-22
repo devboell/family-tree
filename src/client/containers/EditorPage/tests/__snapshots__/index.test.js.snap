@@ -25,3 +25,29 @@ exports[`EditorPage, renders the component 1`] = `
   </styled.div>
 </styled.div>
 `;
+
+exports[`EditorPage, renders the component, CREATE mode 1`] = `
+<styled.div>
+  <PersonList
+    onSelectPerson={[Function]}
+    persons={Array []}
+    selectedPerson={Object {}}
+  />
+  <styled.div>
+    <EditorControls
+      editMode="create"
+      onCreatePerson={[Function]}
+      onRemovePerson={[Function]}
+      removePersonMutation={[Function]}
+      selectedPerson={Object {}}
+    />
+    <ReduxForm
+      disabled={false}
+      initialValues={Object {}}
+      onSubmit={[Function]}
+      persons={Array []}
+      relations={Array []}
+    />
+  </styled.div>
+</styled.div>
+`;

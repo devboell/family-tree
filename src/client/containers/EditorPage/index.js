@@ -96,7 +96,7 @@ const mapStateToProps = state => ({
   selectedPerson: state.editor.selectedPerson,
 })
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   onSelectPerson: id => dispatch(selectPerson(id)),
   onCreatePerson: () => dispatch(createPerson()),
   onRemovePerson: () => dispatch(removePerson()),
