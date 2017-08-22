@@ -1,6 +1,7 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import { connect } from 'react-redux'
+import { compose } from 'lodash/fp'
 
 import EditorControls from 'components/EditorControls'
 import PersonEditor from 'components/PersonEditor'
@@ -90,7 +91,7 @@ EditorPage.propTypes = {
   selectedPerson: PropTypes.shape({}).isRequired,
 }
 
-const mapStateTopProps = state => ({
+const mapStateToProps = state => ({
   editMode: state.editor.editMode,
   selectedPerson: state.editor.selectedPerson,
 })
@@ -101,4 +102,7 @@ const mapDispatchToProps = dispatch => ({
   onRemovePerson: () => dispatch(removePerson()),
 })
 
-export default enhancers(connect(mapStateTopProps, mapDispatchToProps)(EditorPage))
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  enhancers,
+)(EditorPage)
