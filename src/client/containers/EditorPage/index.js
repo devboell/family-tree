@@ -77,8 +77,8 @@ const EditorPage = ({
   )
 }
 EditorPage.propTypes = {
-  relationsQuery: PropTypes.object.isRequired,
-  personsQuery: PropTypes.object.isRequired,
+  relationsQuery: PropTypes.shape({}).isRequired,
+  personsQuery: PropTypes.shape({}).isRequired,
   createPersonMutation: PropTypes.func.isRequired,
   updatePersonMutation: PropTypes.func.isRequired,
   removePersonMutation: PropTypes.func.isRequired,
@@ -86,7 +86,7 @@ EditorPage.propTypes = {
   onSelectPerson: PropTypes.func.isRequired,
   onCreatePerson: PropTypes.func.isRequired,
   onRemovePerson: PropTypes.func.isRequired,
-  selectedPerson: PropTypes.object.isRequired,
+  selectedPerson: PropTypes.shape({}).isRequired,
 }
 
 const mapStateTopProps = state => ({
