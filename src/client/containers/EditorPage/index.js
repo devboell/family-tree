@@ -12,6 +12,19 @@ import PersonList from '../../components/PersonList'
 import Wrapper from './Wrapper'
 import EditorWrapper from './EditorWrapper'
 
+
+const convertPartnerValues = values => (
+  {
+    ...values,
+    partners: values.partners.map(partner => (
+      {
+        relationId: partner.relationId,
+        partnerId: partner.partner.id,
+      }
+    )),
+  }
+)
+
 const EditorPage = ({
   relationsQuery,
   personsQuery,
@@ -26,18 +39,6 @@ const EditorPage = ({
   onRemovePerson,
   selectedPerson,
 }) => {
-  const convertPartnerValues = values => (
-    {
-      ...values,
-      partners: values.partners.map(partner => (
-        {
-          relationId: partner.relationId,
-          partnerId: partner.partner.id,
-        }
-      )),
-    }
-  )
-
   const onSubmit = (editMode === editModes.CREATE)
     ? (values) => {
       createPersonMutation(convertPartnerValues(values)).then((result) => {
