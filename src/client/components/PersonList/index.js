@@ -18,7 +18,7 @@ const PersonList = ({ persons, onSelectPerson }) =>
   </Ul>
 
 PersonList.propTypes = {
-  persons: PropTypes.array.isRequired,
+  persons: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   onSelectPerson: PropTypes.func.isRequired,
 }
 
