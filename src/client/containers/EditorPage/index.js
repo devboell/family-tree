@@ -2,13 +2,14 @@ import React from 'react'
 import { PropTypes } from 'prop-types'
 import { connect } from 'react-redux'
 
+import EditorControls from 'components/EditorControls'
+import PersonEditor from 'components/PersonEditor'
+import PersonList from 'components/PersonList'
+
 import { selectPerson, createPerson, removePerson } from './thunks'
 import enhancers from './enhancers'
 import { editModes } from './constants'
 
-import EditorControls from '../../components/EditorControls'
-import PersonEditor from '../../components/PersonEditor'
-import PersonList from '../../components/PersonList'
 import Wrapper from './Wrapper'
 import EditorWrapper from './EditorWrapper'
 
