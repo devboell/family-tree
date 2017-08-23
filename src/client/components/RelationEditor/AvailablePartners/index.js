@@ -25,8 +25,8 @@ const AvailablePartners = ({ persons, fields }) =>
   </Ul>
 
 AvailablePartners.propTypes = {
-  persons: PropTypes.array.isRequired,
-  fields: PropTypes.object.isRequired,
+  persons: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  fields: PropTypes.shape({}).isRequired,
 }
 
 
