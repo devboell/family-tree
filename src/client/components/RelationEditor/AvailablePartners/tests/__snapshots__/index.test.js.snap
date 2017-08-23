@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvailablePartners, renders without crashing 1`] = `
+<styled.ul>
+  <styled.li>
+    <styled.button
+      onClick={[Function]}
+      type="button"
+    >
+      add
+    </styled.button>
+    John
+  </styled.li>
+  <styled.li>
+    <styled.button
+      onClick={[Function]}
+      type="button"
+    >
+      add
+    </styled.button>
+    Mary
+  </styled.li>
+</styled.ul>
+`;
