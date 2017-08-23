@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvailablePartners, renders without crashing 1`] = `
+<styled.div>
+  <styled.p>
+    Partners:
+  </styled.p>
+  <styled.ul>
+    <Field
+      component={[Function]}
+      name="John"
+      onRemove={[Function]}
+    />
+    <Field
+      component={[Function]}
+      name="Mary"
+      onRemove={[Function]}
+    />
+  </styled.ul>
+</styled.div>
+`;
