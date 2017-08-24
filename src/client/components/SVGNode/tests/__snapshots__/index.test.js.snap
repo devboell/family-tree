@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SVGNode, renders component 1`] = `
+<g
+  fill="none"
+  stroke="black"
+  strokeWidth="1"
+  style={
+    Object {
+      "shapeRendering": "crispEdges",
+    }
+  }
+>
+  <SVGNodeInfo
+    boxHeight={100}
+    boxWidth={100}
+    info="root"
+    x={200}
+    y={0}
+  />
+  <SVGNodeLink
+    dimensions={
+      Object {
+        "boxHeight": 100,
+        "boxWidth": 100,
+        "marginX": 50,
+        "marginY": 50,
+      }
+    }
+    linkTo={null}
+    x={200}
+    y={0}
+  />
+  <SVGPartnerNode
+    dimensions={
+      Object {
+        "boxHeight": 100,
+        "boxWidth": 100,
+        "marginX": 50,
+        "marginY": 50,
+      }
+    }
+    node={
+      Object {
+        "children": Array [
+          Object {
+            "level": 1,
+            "partners": Array [],
+            "totalHeight": 100,
+            "totalWidth": 100,
+            "value": "child 1 - level 1",
+          },
+          Object {
+            "level": 1,
+            "partners": Array [],
+            "totalHeight": 100,
+            "totalWidth": 100,
+            "value": "child 2 - level 1",
+          },
+        ],
+        "level": 0,
+        "totalHeight": 200,
+        "totalWidth": 200,
+        "value": "root - partner 1",
+      }
+    }
+    offsetX={200}
+    previousSubTreeWidth={0}
+    y={0}
+  />
+  <SVGPartnerNode
+    dimensions={
+      Object {
+        "boxHeight": 100,
+        "boxWidth": 100,
+        "marginX": 50,
+        "marginY": 50,
+      }
+    }
+    node={
+      Object {
+        "children": Array [],
+        "level": 0,
+        "totalHeight": 100,
+        "totalWidth": 200,
+        "value": "root - partner 2",
+      }
+    }
+    offsetX={400}
+    previousSubTreeWidth={200}
+    y={0}
+  />
+</g>
+`;

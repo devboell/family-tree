@@ -11,7 +11,7 @@ const TextField = ({ input }) => (
 )
 
 TextField.propTypes = {
-  input: PropTypes.object.isRequired,
+  input: PropTypes.shape({}).isRequired,
 }
 
 

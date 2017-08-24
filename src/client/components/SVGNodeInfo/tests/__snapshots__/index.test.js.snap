@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SVGNodeInfo, renders component 1`] = `
+<foreignObject
+  height={80}
+  width={80}
+  x={200}
+  y={300}
+>
+  <styled.div
+    height={80}
+    width={80}
+  >
+    <p>
+      John
+    </p>
+  </styled.div>
+</foreignObject>
+`;

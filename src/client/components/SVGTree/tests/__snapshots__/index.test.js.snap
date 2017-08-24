@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SVGPartnerTree, renders component 1`] = `
+<svg
+  height={502}
+  width={502}
+>
+  <SVGNode
+    dimensions={Object {}}
+    linkTo={null}
+    node={
+      Object {
+        "totalHeight": 500,
+        "totalWidth": 500,
+      }
+    }
+    offsetX={0}
+  />
+</svg>
+`;

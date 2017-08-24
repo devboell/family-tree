@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SVGPartnerLink, renders component 1`] = `
+<path
+  d="M 300 100 H 82"
+  stroke="red"
+/>
+`;

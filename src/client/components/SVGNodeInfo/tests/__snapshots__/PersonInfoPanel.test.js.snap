@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonInfoPanel, styled component snapshot 1`] = `
+.ixIxkP {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100px;
+  height: 100px;
+}
+
+.ixIxkP > p {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 14px;
+  color: blue;
+}
+
+<div
+  className="sc-bdVaJa ixIxkP"
+  height={100}
+  width={100}
+/>
+`;

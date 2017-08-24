@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SVGPartnerNode, renders component 1`] = `
+<g>
+  <SVGNodeInfo
+    boxHeight={80}
+    boxWidth={80}
+    info="John"
+    x={NaN}
+    y={100}
+  />
+  <SVGPartnerLink
+    dimensions={
+      Object {
+        "boxHeight": 80,
+        "boxWidth": 80,
+        "marginX": 50,
+      }
+    }
+    offsetX={100}
+    originX={NaN}
+    originY={140}
+    previousSubTreeWidth={200}
+  />
+</g>
+`;
