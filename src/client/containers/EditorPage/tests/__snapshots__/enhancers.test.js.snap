@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CREATE_PERSON_MUTATION, has a known query shape 1`] = `
+"mutation createPersonMutation($name: String, $title: String, $birthDate: Int, $deathDate: Int, $gender: String, $isMonarch: Boolean, $bornToId: ID, $partners: [PartnerInput]) {
+  createPerson(name: $name, title: $title, birthDate: $birthDate, deathDate: $deathDate, gender: $gender, isMonarch: $isMonarch, bornToId: $bornToId, partners: $partners) {
+    id
+    ...personInfo
+  }
+}
+
+fragment personInfo on Person {
+  name
+  title
+  birthDate
+  deathDate
+  gender
+  isMonarch
+  bornToId
+  partnerIds
+  partners {
+    relationId
+    partner {
+      id
+      name
+    }
+    children {
+      name
+    }
+  }
+}
+"
+`;
+
+exports[`PERSONS_QUERY, has a known query shape 1`] = `
+"query personsQuery {
+  persons {
+    id
+    ...personInfo
+  }
+}
+
+fragment personInfo on Person {
+  name
+  title
+  birthDate
+  deathDate
+  gender
+  isMonarch
+  bornToId
+  partnerIds
+  partners {
+    relationId
+    partner {
+      id
+      name
+    }
+    children {
+      name
+    }
+  }
+}
+"
+`;
+
+exports[`RELATIONS_QUERY, has a known query shape 1`] = `
+"query relationsQuery {
+  relations {
+    id
+    person1 {
+      name
+    }
+    person2 {
+      name
+    }
+  }
+}
+"
+`;
+
+exports[`REMOVE_PERSON_MUTATION, has a known query shape 1`] = `undefined`;
+
+exports[`UPDATE_PERSON_MUTATION, has a known query shape 1`] = `
+"mutation updatePersonMutation($id: ID!, $name: String, $title: String, $birthDate: Int, $deathDate: Int, $gender: String, $isMonarch: Boolean, $bornToId: ID, $partners: [PartnerInput]) {
+  updatePerson(id: $id, name: $name, title: $title, birthDate: $birthDate, deathDate: $deathDate, gender: $gender, isMonarch: $isMonarch, bornToId: $bornToId, partners: $partners) {
+    id
+    ...personInfo
+  }
+}
+
+fragment personInfo on Person {
+  name
+  title
+  birthDate
+  deathDate
+  gender
+  isMonarch
+  bornToId
+  partnerIds
+  partners {
+    relationId
+    partner {
+      id
+      name
+    }
+    children {
+      name
+    }
+  }
+}
+"
+`;

@@ -23,7 +23,7 @@ const personInfoFragment = gql`
   }
 `
 
-const personsQuery = gql`
+export const PERSONS_QUERY = gql`
   query personsQuery {
     persons {
       id
@@ -33,7 +33,7 @@ const personsQuery = gql`
   ${personInfoFragment}
 `
 
-const relationsQuery = gql`
+export const RELATIONS_QUERY = gql`
   query relationsQuery {
     relations {
       id
@@ -47,7 +47,7 @@ const relationsQuery = gql`
   }
 `
 
-const createPersonMutation = gql`
+export const CREATE_PERSON_MUTATION = gql`
   mutation createPersonMutation(
     $name: String
     $title: String
@@ -75,7 +75,7 @@ const createPersonMutation = gql`
   ${personInfoFragment}
 `
 
-const updatePersonMutation = gql`
+export const UPDATE_PERSON_MUTATION = gql`
   mutation updatePersonMutation(
     $id: ID!
     $name: String
@@ -104,7 +104,7 @@ const updatePersonMutation = gql`
   }
   ${personInfoFragment}
 `
-const removePersonMutation = gql`
+const REMOVE_PERSON_MUTATION = gql`
   mutation removePersonMutation(
     $id: ID!
   ) {
@@ -115,48 +115,48 @@ const removePersonMutation = gql`
 `
 
 export default compose(
-  graphql(relationsQuery, { name: 'relationsQuery' }),
-  graphql(personsQuery, { name: 'personsQuery' }),
-  graphql(createPersonMutation, {
+  graphql(RELATIONS_QUERY, { name: 'relationsQuery' }),
+  graphql(PERSONS_QUERY, { name: 'personsQuery' }),
+  graphql(CREATE_PERSON_MUTATION, {
     props: ({ mutate }) => ({
       createPersonMutation: values => mutate({
         variables: values,
         refetchQueries: [
           {
-            query: personsQuery,
+            query: PERSONS_QUERY,
           },
           {
-            query: relationsQuery,
+            query: RELATIONS_QUERY,
           },
         ],
       }),
     }),
   }),
-  graphql(updatePersonMutation, {
+  graphql(UPDATE_PERSON_MUTATION, {
     props: ({ mutate }) => ({
       updatePersonMutation: values => mutate({
         variables: values,
         refetchQueries: [
           {
-            query: personsQuery,
+            query: PERSONS_QUERY,
           },
           {
-            query: relationsQuery,
+            query: RELATIONS_QUERY,
           },
         ],
       }),
     }),
   }),
-  graphql(removePersonMutation, {
+  graphql(REMOVE_PERSON_MUTATION, {
     props: ({ mutate }) => ({
       removePersonMutation: values => mutate({
         variables: values,
         refetchQueries: [
           {
-            query: personsQuery,
+            query: PERSONS_QUERY,
           },
           {
-            query: relationsQuery,
+            query: RELATIONS_QUERY,
           },
         ],
       }),
