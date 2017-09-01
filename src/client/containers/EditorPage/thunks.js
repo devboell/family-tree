@@ -1,29 +1,32 @@
-import { editModes } from './constants'
 import {
-  setSelectedPerson,
-  setEditMode,
+  setSelectedPersonId,
+  setCreateMode,
+  setIsRemoving,
+  clearSelection,
 } from './actions'
 
-const newPerson = {
-  name: '',
-  bornToId: null,
-  partners: [],
-}
 
-export const selectPerson = person =>
+export const selectPersonId = id =>
   (dispatch) => {
-    dispatch(setSelectedPerson(person))
-    dispatch(setEditMode(editModes.UPDATE))
+    dispatch(setSelectedPersonId(id))
+    dispatch(setCreateMode(false))
   }
 
-export const createPerson = () =>
+export const prepareCreatePerson = () =>
   (dispatch) => {
-    dispatch(setSelectedPerson(newPerson))
-    dispatch(setEditMode(editModes.CREATE))
+    dispatch(clearSelection())
+    dispatch(setCreateMode(true))
+  }
+
+export const createPerson = id =>
+  (dispatch) => {
+    dispatch(setSelectedPersonId(id))
+    dispatch(setCreateMode(false))
   }
 
 export const removePerson = () =>
   (dispatch) => {
-    dispatch(setSelectedPerson({}))
-    dispatch(setEditMode(editModes.DISABLED))
+    dispatch(clearSelection())
+    dispatch(setCreateMode(false))
+    dispatch(setIsRemoving(true))
   }

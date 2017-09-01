@@ -1,21 +1,25 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import { connect } from 'react-redux'
-import { compose } from 'lodash/fp'
+import { compose, find, isEmpty } from 'lodash/fp'
 
+import PersonList from 'components/PersonList'
 import EditorControls from 'components/EditorControls'
 import PersonEditor from 'components/PersonEditor'
-import PersonList from 'components/PersonList'
 
-import { selectPerson, createPerson, removePerson } from './thunks'
+import { selectPersonId, prepareCreatePerson, createPerson, removePerson } from './thunks'
 import enhancers from './enhancers'
-import { editModes } from './constants'
 
 import Wrapper from './Wrapper'
 import EditorWrapper from './EditorWrapper'
 
+const newPerson = {
+  name: '',
+  bornToId: null,
+  partners: [],
+}
 
-const convertPartnerValues = values => (
+const convertFormValuesToSchema = values => (
   {
     ...values,
     partners: values.partners.map(partner => (
@@ -28,77 +32,92 @@ const convertPartnerValues = values => (
 )
 
 export const EditorPage = ({
-  relationsQuery,
   personsQuery,
-  relationsQuery: { relations },
+  relationsQuery,
   personsQuery: { persons },
+  relationsQuery: { relations },
   createPersonMutation,
   updatePersonMutation,
   removePersonMutation,
-  editMode,
-  onSelectPerson,
+  selectedPersonId,
+  onPrepareCreatePerson,
   onCreatePerson,
   onRemovePerson,
-  selectedPerson,
+  onSelectPersonId,
+  createMode,
 }) => {
-  const onSubmit = (editMode === editModes.CREATE)
-    ? (values) => {
-      createPersonMutation(convertPartnerValues(values)).then((result) => {
-        onSelectPerson(result.data.createPerson)
-      })
-    }
-    : (values) => { updatePersonMutation(convertPartnerValues(values)) }
+  const createPersonSubmit = values =>
+    createPersonMutation(convertFormValuesToSchema(values)).then(result =>
+      onCreatePerson(result.data.createPerson.id))
 
-  const editorProps = {
-    disabled: editMode === editModes.DISABLED,
-    onSubmit,
-    initialValues: selectedPerson,
-    partners: selectedPerson.partners,
-    persons,
-    relations,
+  const updatePersonSubmit = values =>
+    updatePersonMutation(convertFormValuesToSchema(values))
+
+  const removePersonSubmit = (id) => { // not really form submit
+    onRemovePerson()
+    removePersonMutation({ id })
   }
+
+  const personToEdit = createMode
+    ? newPerson
+    : find({ id: selectedPersonId })(persons)
+
+  const showEditor = !isEmpty(personToEdit)
+
 
   return (
     relationsQuery.loading || personsQuery.loading
     ? <div>loading ...</div>
-    : <Wrapper>
-      <PersonList {...{ persons, onSelectPerson, selectedPerson }} />
+    :
+    <Wrapper>
+      <PersonList
+        {...{ persons, onSelectPersonId, selectedPersonId }}
+      />
       <EditorWrapper>
         <EditorControls
-          {...{
-            editMode,
-            selectedPerson,
-            onCreatePerson,
-            onRemovePerson,
-            removePersonMutation,
-          }}
+          {...{ onPrepareCreatePerson }}
+          showRemove={selectedPersonId !== 'no_selection'}
+          onRemovePerson={() => removePersonSubmit(selectedPersonId)}
         />
-        <PersonEditor {...editorProps} />
+        {showEditor
+          ?
+            <PersonEditor
+              onSubmit={createMode ? createPersonSubmit : updatePersonSubmit}
+              initialValues={personToEdit}
+              partners={personToEdit.partners}
+              {...{ persons, relations }}
+            />
+          : null
+        }
       </EditorWrapper>
     </Wrapper>
   )
 }
+
 EditorPage.propTypes = {
-  relationsQuery: PropTypes.shape({}).isRequired,
   personsQuery: PropTypes.shape({}).isRequired,
+  relationsQuery: PropTypes.shape({}).isRequired,
   createPersonMutation: PropTypes.func.isRequired,
   updatePersonMutation: PropTypes.func.isRequired,
   removePersonMutation: PropTypes.func.isRequired,
-  editMode: PropTypes.string.isRequired,
-  onSelectPerson: PropTypes.func.isRequired,
+  selectedPersonId: PropTypes.string.isRequired,
+  createMode: PropTypes.bool.isRequired,
+  onSelectPersonId: PropTypes.func.isRequired,
+  onPrepareCreatePerson: PropTypes.func.isRequired,
   onCreatePerson: PropTypes.func.isRequired,
   onRemovePerson: PropTypes.func.isRequired,
-  selectedPerson: PropTypes.shape({}).isRequired,
 }
 
 const mapStateToProps = state => ({
-  editMode: state.editor.editMode,
-  selectedPerson: state.editor.selectedPerson,
+  selectedPersonId: state.editor.selectedPersonId,
+  createMode: state.editor.createMode,
+  isRemoving: state.editor.isRemoving,
 })
 
 export const mapDispatchToProps = dispatch => ({
-  onSelectPerson: id => dispatch(selectPerson(id)),
-  onCreatePerson: () => dispatch(createPerson()),
+  onSelectPersonId: id => dispatch(selectPersonId(id)),
+  onPrepareCreatePerson: () => dispatch(prepareCreatePerson()),
+  onCreatePerson: id => dispatch(createPerson(id)),
   onRemovePerson: () => dispatch(removePerson()),
 })
 

@@ -1,9 +1,3 @@
-export const editModes = {
-  DISABLED: 'disabled',
-  CREATE: 'create',
-  UPDATE: 'update',
-}
-
-
-export const SET_EDIT_MODE = 'SET_EDIT_MODE'
-export const SET_SELECTED_PERSON = 'SET_SELECTED_PERSON'
+export const SET_SELECTED_PERSON_ID = 'SET_SELECTED_PERSON_ID'
+export const SET_CREATE_MODE = 'SET_CREATE_MODE'
+export const SET_IS_REMOVING = 'SET_IS_REMOVING'
