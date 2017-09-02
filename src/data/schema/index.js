@@ -39,7 +39,7 @@ type Relation {
 type Query {
   persons: [Person]
   relations: [Relation]
-  familyTree(id: Int!): JSON
+  familyTree(id: ID!): JSON
 }
 
 type Mutation {

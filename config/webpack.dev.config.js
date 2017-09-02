@@ -1,8 +1,10 @@
+require('babel-polyfill')
 const webpack = require('webpack')
 
 module.exports = {
   entry: {
     main: [
+      'babel-polyfill',
       'react-hot-loader/patch',
       'webpack-hot-middleware/client',
       './main.js',

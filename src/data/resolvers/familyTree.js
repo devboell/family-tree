@@ -67,10 +67,11 @@ const tree = (id, familyTable, partners) => {
 }
 
 const familyTree = async (obj, args) => {
-  const familyTreeTable = await FamilyTreeModel.familyTreeTable(args.id)
+  const id = parseInt(args.id, 10)
+  const familyTreeTable = await FamilyTreeModel.familyTreeTable(id)
   const familyPartners = await FamilyTreeModel.familyPartners(familyTreeTable)
 
-  return tree(args.id, familyTreeTable, familyPartners)
+  return tree(id, familyTreeTable, familyPartners)
 }
 
 module.exports = {

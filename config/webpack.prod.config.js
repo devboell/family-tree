@@ -1,8 +1,10 @@
+require('babel-polyfill')
 const webpack = require('webpack')
 
 module.exports = {
   entry: {
     main: [
+      'babel-polyfill',
       './main.js',
     ],
   },
