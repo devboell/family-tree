@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { isEmpty } from 'lodash/fp'
 
 const SVGNodeLink = ({
   x,
@@ -10,7 +11,7 @@ const SVGNodeLink = ({
   const { boxWidth, marginY } = dimensions
   return (
     <g>
-      {linkTo
+      {!isEmpty(linkTo)
         ? <path d={`M ${x + (boxWidth / 2)} ${y} V ${y - (marginY / 2)} H ${linkTo.x} V ${linkTo.y}`} />
         : null
       }

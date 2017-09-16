@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FamilyTree component loading FALSE familyTree EMPTY, renders without crashing 1`] = `<div />`;
+
+exports[`FamilyTree component loading FALSE familyTree NOT EMPTY, renders without crashing 1`] = `
+<SVGTree
+  dimensions={
+    Object {
+      "boxHeight": 60,
+      "boxWidth": 80,
+      "marginX": 30,
+      "marginY": 50,
+    }
+  }
+  treeData={
+    Object {
+      "level": 0,
+      "partners": Array [],
+      "totalHeight": 110,
+      "totalWidth": 110,
+      "value": "John",
+    }
+  }
+/>
+`;
+
+exports[`FamilyTree component loading TRUE familyTree EMPTY, renders without crashing 1`] = `
+<div>
+  Loading ...
+</div>
+`;

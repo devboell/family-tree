@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`description 1`] = `
+exports[`App component renders without crashing 1`] = `
 <div>
   <Header />
   <Route

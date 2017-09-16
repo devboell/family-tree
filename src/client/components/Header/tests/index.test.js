@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../index'
 
-it('renders Header component', () => {
+it('Header component, it renders without crashing', () => {
   expect(shallow(<Header />)).toMatchSnapshot()
 })

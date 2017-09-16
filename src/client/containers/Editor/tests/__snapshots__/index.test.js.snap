@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Editor component CREATE mode it renders without crashing 1`] = `
+<styled.div>
+  <EditorControls
+    onPrepareCreatePerson={[Function]}
+    onRemovePerson={[Function]}
+    showRemove={false}
+  />
+  <ReduxForm
+    initialValues={
+      Object {
+        "bornToId": null,
+        "name": "",
+        "partners": Array [],
+      }
+    }
+    onSubmit={[Function]}
+    partners={Array []}
+    persons={Array []}
+    relations={Array []}
+  />
+</styled.div>
+`;
+
+exports[`Editor component EMPTY mode, showEditor is false only renders EditorControls 1`] = `
+<styled.div>
+  <EditorControls
+    onPrepareCreatePerson={[Function]}
+    onRemovePerson={[Function]}
+    showRemove={false}
+  />
+</styled.div>
+`;
+
+exports[`Editor component LOADING mode renders loading ... div 1`] = `
+<div>
+  loading ...
+</div>
+`;
+
+exports[`Editor component UPDATE mode it renders without crashing 1`] = `
+<styled.div>
+  <EditorControls
+    onPrepareCreatePerson={[Function]}
+    onRemovePerson={[Function]}
+    showRemove={true}
+  />
+  <ReduxForm
+    initialValues={
+      Object {
+        "id": 1,
+        "partners": Array [],
+      }
+    }
+    onSubmit={[Function]}
+    partners={Array []}
+    persons={Array []}
+    relations={Array []}
+  />
+</styled.div>
+`;

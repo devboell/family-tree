@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FamilyTreePage component, it renders without crashing 1`] = `
+<styled.div>
+  <Connect(Apollo(PersonList))>
+    <Apollo(Component) />
+  </Connect(Apollo(PersonList))>
+</styled.div>
+`;

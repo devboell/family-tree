@@ -4,10 +4,13 @@ import { connect } from 'react-redux'
 import { compose, isEmpty, find } from 'lodash/fp'
 
 import withPersons from './enhancers'
-import { setSelectedPersonId } from './actions'
+import { selectPerson, selectFirst, unselect } from './thunks'
+import selectionModes from './constants'
 
 import Wrapper from './Wrapper'
 import ChildWrapper from './ChildWrapper'
+import ListWrapper from './ListWrapper'
+import EmptyListMessage from './EmptyListMessage'
 import Ul from './Ul'
 import Li from './Li'
 import Button from './Button'
@@ -17,17 +20,17 @@ export class PersonList extends Component {
     const {
       loading,
       persons,
-      selectedPersonId,
-      onSetSelectedPersonId,
+      onSelectPerson,
+      selectionMode,
     } = nextProps
 
-    const selectFirst =
+    const shouldSelectFirst =
       !loading &&
       persons.length &&
-      selectedPersonId === 'preselect'
+      selectionMode === selectionModes.SELECT_FIRST
 
-    if (selectFirst) {
-      onSetSelectedPersonId(persons[0].id)
+    if (shouldSelectFirst) {
+      onSelectPerson(persons[0].id)
     }
   }
 
@@ -37,8 +40,10 @@ export class PersonList extends Component {
       persons,
       refetch,
       selectedPersonId,
-      onSetSelectedPersonId,
+      selectionMode,
+      onSelectPerson,
       onSelectFirst,
+      onUnselect,
       children,
     } = this.props
 
@@ -46,21 +51,23 @@ export class PersonList extends Component {
 
     return (
       <Wrapper>
-        {isEmpty(persons)
-          ? <div>no persons found</div>
-          : <Ul>
-            {persons.map(person =>
-              <Li key={`person-${person.id}`}>
-                <Button
-                  isSelected={person.id === selectedPersonId}
-                  onClick={() => onSetSelectedPersonId(person.id)}
-                >
-                  {person.name}
-                </Button>
-              </Li>,
-            )}
-          </Ul>
-        }
+        <ListWrapper>
+          {isEmpty(persons)
+            ? <EmptyListMessage>no persons found</EmptyListMessage>
+            : <Ul>
+              {persons.map(person =>
+                <Li key={`person-${person.id}`}>
+                  <Button
+                    isSelected={person.id === selectedPersonId}
+                    onClick={() => onSelectPerson(person.id)}
+                  >
+                    {person.name}
+                  </Button>
+                </Li>,
+              )}
+            </Ul>
+          }
+        </ListWrapper>
 
         <ChildWrapper>
           {React.cloneElement(
@@ -68,9 +75,10 @@ export class PersonList extends Component {
             {
               personId: selectedPersonId,
               person: find({ id: selectedPersonId })(persons) || {},
-              selectedPersonId,
-              onSetSelectedPersonId,
+              selectionMode,
+              onSelectPerson,
               onSelectFirst,
+              onUnselect,
               refetch,
               persons,
             },
@@ -87,8 +95,10 @@ PersonList.propTypes = {
   persons: PropTypes.arrayOf(PropTypes.shape({})),
   refetch: PropTypes.func.isRequired,
   selectedPersonId: PropTypes.string.isRequired,
+  selectionMode: PropTypes.string.isRequired,
+  onSelectPerson: PropTypes.func.isRequired,
   onSelectFirst: PropTypes.func.isRequired,
-  onSetSelectedPersonId: PropTypes.func.isRequired,
+  onUnselect: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
 }
 
@@ -96,14 +106,16 @@ PersonList.defaultProps = {
   persons: [],
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   selectedPersonId: state.personList.selectedPersonId,
+  selectionMode: state.personList.selectionMode,
 })
 
 
-const mapDispatchToProps = dispatch => ({
-  onSetSelectedPersonId: id => dispatch(setSelectedPersonId(id)),
-  onSelectFirst: () => dispatch(setSelectedPersonId('selectFirst')),
+export const mapDispatchToProps = dispatch => ({
+  onSelectPerson: id => dispatch(selectPerson(id)),
+  onSelectFirst: () => dispatch(selectFirst()),
+  onUnselect: () => dispatch(unselect()),
 })
 
 export default compose(

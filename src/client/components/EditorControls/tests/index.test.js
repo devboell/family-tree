@@ -15,16 +15,23 @@ describe('EditorControls component', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('calls removePersonMutation', () => {
-    const wrapper = shallow(<EditorControls {...props} />)
-    wrapper.find(Button).at(1).simulate('click')
-
-    expect(props.onRemovePerson).toHaveBeenCalled()
-  })
-
   it('renders in update mode', () => {
     const newProps = { ...props, showRemove: false }
     const wrapper = shallow(<EditorControls {...newProps} />)
     expect(wrapper).toMatchSnapshot()
+  })
+
+  it('calls onPrepareCreatePerson', () => {
+    const wrapper = shallow(<EditorControls {...props} />)
+    wrapper.find(Button).at(0).simulate('click')
+
+    expect(props.onPrepareCreatePerson).toHaveBeenCalled()
+  })
+
+  it('calls onRemovePerson', () => {
+    const wrapper = shallow(<EditorControls {...props} />)
+    wrapper.find(Button).at(1).simulate('click')
+
+    expect(props.onRemovePerson).toHaveBeenCalled()
   })
 })

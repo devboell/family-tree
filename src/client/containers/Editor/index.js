@@ -6,20 +6,20 @@ import { compose, isEmpty } from 'lodash/fp'
 import EditorControls from 'components/EditorControls'
 import PersonEditor from 'components/PersonEditor'
 
+import selectionModes from 'containers/PersonList/constants'
+
 import { setCreateMode } from './actions'
-// import { selectPersonId, prepareCreatePerson, createPerson, removePerson } from './thunks'
 import withRelations from './enhancers'
 
 import Wrapper from './Wrapper'
-import EditorWrapper from './EditorWrapper'
 
-const newPerson = {
+export const newPerson = {
   name: '',
   bornToId: null,
   partners: [],
 }
 
-const convertFormValuesToSchema = values => (
+export const convertFormValuesToSchema = values => (
   {
     ...values,
     partners: values.partners.map(partner => (
@@ -34,8 +34,8 @@ const convertFormValuesToSchema = values => (
 export class Editor extends Component {
 
   componentWillReceiveProps(nextProps) {
-    const { onSetCreateMode, selectedPersonId } = nextProps
-    if (selectedPersonId !== 'unselect') {
+    const { onSetCreateMode, selectionMode } = nextProps
+    if (selectionMode !== selectionModes.UNSELECTED) {
       onSetCreateMode(false)
     }
   }
@@ -47,7 +47,8 @@ export class Editor extends Component {
       person,
       persons,
       refetch,
-      onSetSelectedPersonId,
+      onSelectPerson,
+      onSelectFirst,
       createPersonMutation,
       updatePersonMutation,
       removePersonMutation,
@@ -58,16 +59,18 @@ export class Editor extends Component {
     const createPersonSubmit = async (values) => {
       const result = await createPersonMutation(convertFormValuesToSchema(values))
       await refetch()
-      onSetSelectedPersonId(result.data.createPerson.id)
+      onSelectPerson(result.data.createPerson.id)
     }
 
-    const updatePersonSubmit = values =>
-      updatePersonMutation(convertFormValuesToSchema(values))
+    const updatePersonSubmit = async (values) => {
+      await updatePersonMutation(convertFormValuesToSchema(values))
+      await refetch()
+    }
 
     const removePersonSubmit = async (id) => { // not really form submit
       await removePersonMutation({ id })
       await refetch()
-      onSetSelectedPersonId('preselect')
+      onSelectFirst()
     }
 
     const personToEdit = createMode
@@ -82,23 +85,21 @@ export class Editor extends Component {
       ? <div>loading ...</div>
       :
       <Wrapper>
-        <EditorWrapper>
-          <EditorControls
-            {...{ onPrepareCreatePerson }}
-            showRemove={personToEdit.id !== undefined}
-            onRemovePerson={() => removePersonSubmit(personToEdit.id)}
-          />
-          {showEditor
-            ?
-              <PersonEditor
-                onSubmit={createMode ? createPersonSubmit : updatePersonSubmit}
-                initialValues={personToEdit}
-                partners={personToEdit.partners}
-                {...{ persons, relations }}
-              />
-            : null
-          }
-        </EditorWrapper>
+        <EditorControls
+          {...{ onPrepareCreatePerson }}
+          showRemove={personToEdit.id !== undefined}
+          onRemovePerson={() => removePersonSubmit(personToEdit.id)}
+        />
+        {showEditor
+          ?
+            <PersonEditor
+              onSubmit={createMode ? createPersonSubmit : updatePersonSubmit}
+              initialValues={personToEdit}
+              partners={personToEdit.partners}
+              {...{ persons, relations }}
+            />
+          : null
+        }
       </Wrapper>
     )
   }
@@ -116,8 +117,9 @@ Editor.propTypes = {
   persons: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   person: PropTypes.shape({}).isRequired,
   refetch: PropTypes.func.isRequired,
-  selectedPersonId: PropTypes.string.isRequired,
-  onSetSelectedPersonId: PropTypes.func.isRequired,
+  selectionMode: PropTypes.string.isRequired,
+  onSelectPerson: PropTypes.func.isRequired,
+  onSelectFirst: PropTypes.func.isRequired,
 
   // from redux
   createMode: PropTypes.bool.isRequired,
@@ -129,14 +131,14 @@ Editor.defaultProps = {
   relations: [],
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   createMode: state.editor.createMode,
 })
 
 export const mapDispatchToProps = (dispatch, ownProps) => ({
   onSetCreateMode: flag => dispatch(setCreateMode(flag)),
   onPrepareCreatePerson: () => {
-    ownProps.onSetSelectedPersonId('unselect')
+    ownProps.onUnselect()
     dispatch(setCreateMode(true))
   },
 })

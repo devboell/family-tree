@@ -1,7 +1,7 @@
 import React from 'react'
 import SVGPartnerLink from '../index'
 
-const props = {
+let props = {
   originX: 300,
   originY: 100,
   offsetX: 50,
@@ -10,7 +10,17 @@ const props = {
 }
 
 
-it('SVGPartnerLink, renders component', () => {
+it('SVGPartnerLink with previousSubTreeWidth, renders component', () => {
+  const wrapper = shallow(<SVGPartnerLink {...props} />)
+  expect(wrapper).toMatchSnapshot()
+})
+
+
+it('SVGPartnerLink without previousSubTreeWidth, renders component', () => {
+  props = {
+    ...props,
+    previousSubTreeWidth: 0,
+  }
   const wrapper = shallow(<SVGPartnerLink {...props} />)
   expect(wrapper).toMatchSnapshot()
 })

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SVGNode, renders component 1`] = `
+exports[`SVGNode component SVGNode, renders node with partners 1`] = `
 <g
   fill="none"
   stroke="black"
@@ -88,6 +88,40 @@ exports[`SVGNode, renders component 1`] = `
     }
     offsetX={400}
     previousSubTreeWidth={200}
+    y={0}
+  />
+</g>
+`;
+
+exports[`SVGNode component SVGNode, renders node without partners 1`] = `
+<g
+  fill="none"
+  stroke="black"
+  strokeWidth="1"
+  style={
+    Object {
+      "shapeRendering": "crispEdges",
+    }
+  }
+>
+  <SVGNodeInfo
+    boxHeight={100}
+    boxWidth={100}
+    info="root"
+    x={250}
+    y={0}
+  />
+  <SVGNodeLink
+    dimensions={
+      Object {
+        "boxHeight": 100,
+        "boxWidth": 100,
+        "marginX": 50,
+        "marginY": 50,
+      }
+    }
+    linkTo={null}
+    x={250}
     y={0}
   />
 </g>

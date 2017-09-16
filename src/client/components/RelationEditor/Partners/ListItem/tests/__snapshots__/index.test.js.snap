@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItem component, renders without crashing 1`] = `
+<li>
+  <styled.div>
+    <styled.button
+      onClick={[Function]}
+      type="button"
+    >
+      X
+    </styled.button>
+    <p>
+      John
+    </p>
+  </styled.div>
+  <styled.div>
+    <p>
+      William
+    </p>
+    <p>
+      Mary
+    </p>
+  </styled.div>
+</li>
+`;

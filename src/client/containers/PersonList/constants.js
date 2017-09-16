@@ -1,0 +1,5 @@
+export default {
+  SELECTED: 'SELECTED',
+  SELECT_FIRST: 'SELECT_FIRST',
+  UNSELECTED: 'UNSELECTED',
+}

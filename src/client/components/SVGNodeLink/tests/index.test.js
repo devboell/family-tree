@@ -1,7 +1,7 @@
 import React from 'react'
 import SVGNodeLink from '../index'
 
-const props = {
+let props = {
   x: 100,
   y: 150,
   linkTo: {
@@ -15,7 +15,16 @@ const props = {
 }
 
 
-it('SVGNodeLink, renders component', () => {
+it('SVGNodeLink with linkTo, renders component', () => {
+  const wrapper = shallow(<SVGNodeLink {...props} />)
+  expect(wrapper).toMatchSnapshot()
+})
+
+it('SVGNodeLink with linkTo, renders component', () => {
+  props = {
+    ...props,
+    linkTo: {},
+  }
   const wrapper = shallow(<SVGNodeLink {...props} />)
   expect(wrapper).toMatchSnapshot()
 })

@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonList component LOADING is true shows loading ... message 1`] = `
+<styled.div>
+  loading ...
+</styled.div>
+`;
+
+exports[`PersonList component list is EMPTY renders empty list 1`] = `
+<styled.div>
+  <styled.div>
+    <EmptyListMessage>
+      no persons found
+    </EmptyListMessage>
+  </styled.div>
+  <styled.div>
+    <MockChild
+      onSelectFirst={[Function]}
+      onSelectPerson={[Function]}
+      onUnselect={[Function]}
+      person={Object {}}
+      personId="no_selection"
+      persons={Array []}
+      refetch={[Function]}
+      selectionMode="SELECT_FIRST"
+    />
+  </styled.div>
+</styled.div>
+`;
+
+exports[`PersonList component list is NOT EMPTY, selectionMode is SELECTED renders 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.ul>
+      <styled.li>
+        <Button
+          isSelected={true}
+          onClick={[Function]}
+        />
+      </styled.li>
+      <styled.li>
+        <Button
+          isSelected={false}
+          onClick={[Function]}
+        />
+      </styled.li>
+    </styled.ul>
+  </styled.div>
+  <styled.div>
+    <MockChild
+      onSelectFirst={[Function]}
+      onSelectPerson={[Function]}
+      onUnselect={[Function]}
+      person={
+        Object {
+          "id": "3",
+        }
+      }
+      personId="3"
+      persons={
+        Array [
+          Object {
+            "id": "3",
+          },
+          Object {
+            "id": "4",
+          },
+        ]
+      }
+      refetch={[Function]}
+      selectionMode="SELECTED"
+    />
+  </styled.div>
+</styled.div>
+`;

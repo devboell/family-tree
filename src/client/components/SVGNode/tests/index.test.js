@@ -1,7 +1,7 @@
 import React from 'react'
 import SVGNode from '../index'
 
-const node = {
+const withPartnerNode = {
   level: 0,
   partners: [
     {
@@ -39,8 +39,16 @@ const node = {
   value: 'root',
 }
 
+const withoutPartnerNode = {
+  level: 0,
+  partners: [],
+  totalHeight: 100,
+  totalWidth: 100,
+  value: 'root',
+
+}
 const props = {
-  node,
+  node: {},
   offsetX: 200,
   linkTo: null,
   dimensions: {
@@ -51,7 +59,22 @@ const props = {
   },
 }
 
-it('SVGNode, renders component', () => {
-  const wrapper = shallow(<SVGNode {...props} />)
-  expect(wrapper).toMatchSnapshot()
+describe('SVGNode component', () => {
+  it('SVGNode, renders node with partners', () => {
+    const newProps = {
+      ...props,
+      node: withPartnerNode,
+    }
+    const wrapper = shallow(<SVGNode {...newProps} />)
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it('SVGNode, renders node without partners', () => {
+    const newProps = {
+      ...props,
+      node: withoutPartnerNode,
+    }
+    const wrapper = shallow(<SVGNode {...newProps} />)
+    expect(wrapper).toMatchSnapshot()
+  })
 })

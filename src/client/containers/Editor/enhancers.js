@@ -94,7 +94,7 @@ export const UPDATE_PERSON_MUTATION = gql`
   }
   ${personInfoFragment}
 `
-const REMOVE_PERSON_MUTATION = gql`
+export const REMOVE_PERSON_MUTATION = gql`
   mutation removePersonMutation(
     $id: ID!
   ) {
@@ -104,47 +104,49 @@ const REMOVE_PERSON_MUTATION = gql`
   }
 `
 
+export const relationsQueryProps = ({ data: { relations, loading } }) => ({
+  relations,
+  loading,
+})
+
+export const refetchQueries = [
+  {
+    query: RELATIONS_QUERY,
+  },
+]
+
+export const createPersonMutationProps = ({ mutate }) => ({
+  createPersonMutation: values => mutate({
+    variables: values,
+    refetchQueries,
+  }),
+})
+
+export const updatePersonMutationProps = ({ mutate }) => ({
+  updatePersonMutation: values => mutate({
+    variables: values,
+    refetchQueries,
+  }),
+})
+
+export const removePersonMutationProps = ({ mutate }) => ({
+  removePersonMutation: values => mutate({
+    variables: values,
+    refetchQueries,
+  }),
+})
+
 export default compose(
   graphql(RELATIONS_QUERY, {
-    props: ({ data: { relations, loading } }) => ({
-      relations,
-      loading,
-    }),
+    props: relationsQueryProps,
   }),
   graphql(CREATE_PERSON_MUTATION, {
-    props: ({ mutate }) => ({
-      createPersonMutation: values => mutate({
-        variables: values,
-        refetchQueries: [
-          {
-            query: RELATIONS_QUERY,
-          },
-        ],
-      }),
-    }),
+    props: createPersonMutationProps,
   }),
   graphql(UPDATE_PERSON_MUTATION, {
-    props: ({ mutate }) => ({
-      updatePersonMutation: values => mutate({
-        variables: values,
-        refetchQueries: [
-          {
-            query: RELATIONS_QUERY,
-          },
-        ],
-      }),
-    }),
+    props: updatePersonMutationProps,
   }),
   graphql(REMOVE_PERSON_MUTATION, {
-    props: ({ mutate }) => ({
-      removePersonMutation: values => mutate({
-        variables: values,
-        refetchQueries: [
-          {
-            query: RELATIONS_QUERY,
-          },
-        ],
-      }),
-    }),
+    props: removePersonMutationProps,
   }),
 )

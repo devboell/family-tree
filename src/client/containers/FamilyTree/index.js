@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { isEmpty } from 'lodash/fp'
+
 
 import { transformTree } from 'lib/TransformTree'
 
@@ -13,17 +15,16 @@ const dimensions = {
   marginY: 50,
 }
 
-const FamilyTree = ({ familyTree, loading }) =>
-  <div>
-    {loading
-      ? <div>Loading ...</div>
-      :
-      <SVGTree
-        treeData={transformTree(familyTree, dimensions)}
-        {...{ dimensions }}
-      />
-    }
-  </div>
+export const FamilyTree = ({ familyTree, loading }) => {
+  if (!loading && isEmpty(familyTree)) return <div />
+  if (loading && isEmpty(familyTree)) return <div>Loading ...</div>
+  return (
+    <SVGTree
+      treeData={transformTree(familyTree, dimensions)}
+      {...{ dimensions }}
+    />
+  )
+}
 
 FamilyTree.propTypes = {
   familyTree: PropTypes.shape({}).isRequired,
@@ -32,7 +33,7 @@ FamilyTree.propTypes = {
 
 FamilyTree.defaultProps = {
   familyTree: {},
-  loading: true,
+  loading: false,
 }
 
 export default withFamilyTree(FamilyTree)

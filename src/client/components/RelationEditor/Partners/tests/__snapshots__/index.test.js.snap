@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AvailablePartners, renders without crashing 1`] = `
+exports[`AvailablePartners component, renders without crashing 1`] = `
 <styled.div>
   <styled.p>
     Partners:

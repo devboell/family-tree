@@ -1,2 +1,2 @@
-/* eslint-disable import/prefer-default-export */
 export const SET_SELECTED_PERSON_ID = 'SET_SELECTED_PERSON_ID'
+export const SET_SELECTION_MODE = 'SET_SELECTION_MODE'

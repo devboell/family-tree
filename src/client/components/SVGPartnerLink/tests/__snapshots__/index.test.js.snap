@@ -1,8 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SVGPartnerLink, renders component 1`] = `
+exports[`SVGPartnerLink with previousSubTreeWidth, renders component 1`] = `
 <path
   d="M 300 100 H 82"
+  stroke="red"
+/>
+`;
+
+exports[`SVGPartnerLink without previousSubTreeWidth, renders component 1`] = `
+<path
+  d="M 300 100 H 252"
   stroke="red"
 />
 `;

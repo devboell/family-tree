@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders Header component 1`] = `
+exports[`Header component, it renders without crashing 1`] = `
 <div>
   <Styled(NavLink)
     exact={true}

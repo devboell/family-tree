@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CREATE_PERSON_MUTATION, has a known query shape 1`] = `
+exports[`Editor enhancers CREATE_PERSON_MUTATION has a known shape 1`] = `
 "mutation createPersonMutation($name: String, $title: String, $birthDate: Int, $deathDate: Int, $gender: String, $isMonarch: Boolean, $bornToId: ID, $partners: [PartnerInput]) {
   createPerson(name: $name, title: $title, birthDate: $birthDate, deathDate: $deathDate, gender: $gender, isMonarch: $isMonarch, bornToId: $bornToId, partners: $partners) {
     id
@@ -31,38 +31,7 @@ fragment personInfo on Person {
 "
 `;
 
-exports[`PERSONS_QUERY, has a known query shape 1`] = `
-"query personsQuery {
-  persons {
-    id
-    ...personInfo
-  }
-}
-
-fragment personInfo on Person {
-  name
-  title
-  birthDate
-  deathDate
-  gender
-  isMonarch
-  bornToId
-  partnerIds
-  partners {
-    relationId
-    partner {
-      id
-      name
-    }
-    children {
-      name
-    }
-  }
-}
-"
-`;
-
-exports[`RELATIONS_QUERY, has a known query shape 1`] = `
+exports[`Editor enhancers RELATIONS_QUERY has a known shape 1`] = `
 "query relationsQuery {
   relations {
     id
@@ -77,9 +46,14 @@ exports[`RELATIONS_QUERY, has a known query shape 1`] = `
 "
 `;
 
-exports[`REMOVE_PERSON_MUTATION, has a known query shape 1`] = `undefined`;
+exports[`Editor enhancers REMOVE_PERSON_MUTATION has a known shape 1`] = `
+"mutation removePersonMutation($id: ID!) {
+  removePerson(id: $id)
+}
+"
+`;
 
-exports[`UPDATE_PERSON_MUTATION, has a known query shape 1`] = `
+exports[`Editor enhancers UPDATE_PERSON_MUTATION has a known shape 1`] = `
 "mutation updatePersonMutation($id: ID!, $name: String, $title: String, $birthDate: Int, $deathDate: Int, $gender: String, $isMonarch: Boolean, $bornToId: ID, $partners: [PartnerInput]) {
   updatePerson(id: $id, name: $name, title: $title, birthDate: $birthDate, deathDate: $deathDate, gender: $gender, isMonarch: $isMonarch, bornToId: $bornToId, partners: $partners) {
     id

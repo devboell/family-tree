@@ -7,6 +7,11 @@ exports[`EditorControls component renders in create mode 1`] = `
   >
     New
   </styled.button>
+  <styled.button
+    onClick={[Function]}
+  >
+    Remove
+  </styled.button>
 </styled.div>
 `;
 
@@ -16,11 +21,6 @@ exports[`EditorControls component renders in update mode 1`] = `
     onClick={[Function]}
   >
     New
-  </styled.button>
-  <styled.button
-    onClick={[Function]}
-  >
-    Remove
   </styled.button>
 </styled.div>
 `;

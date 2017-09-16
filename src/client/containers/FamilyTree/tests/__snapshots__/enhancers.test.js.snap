@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FamilyTree enhancers FAMILY_TREE_QUERY has a known shape 1`] = `
+"query familyTreeQuery($id: ID!) {
+  familyTree(id: $id)
+}
+"
+`;

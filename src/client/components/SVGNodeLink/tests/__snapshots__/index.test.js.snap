@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SVGNodeLink, renders component 1`] = `
+exports[`SVGNodeLink with linkTo, renders component 1`] = `
 <g>
   <path
     d="M 140 150 V 125 H 200 V 100"
   />
 </g>
 `;
+
+exports[`SVGNodeLink with linkTo, renders component 2`] = `<g />`;

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditorPage component, it renders without crashing 1`] = `
+<styled.div>
+  <Connect(Apollo(PersonList))>
+    <Connect(Apollo(Apollo(Apollo(Apollo(Editor))))) />
+  </Connect(Apollo(PersonList))>
+</styled.div>
+`;
