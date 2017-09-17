@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component renders when not selected 1`] = `
+.cEzdAu {
+  width: 100%;
+  background-color: rgb(76, 175, 80);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  outline: 0;
+  cursor: pointer;
+}
+
+.cEzdAu:hover {
+  background-color: gray;
+}
+
+<button
+  className="sc-bdVaJa cEzdAu"
+/>
+`;
+
+exports[`Button component renders when selected 1`] = `
+.ljGfAc {
+  width: 100%;
+  background-color: rgb(18, 106, 22);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  outline: 0;
+  cursor: pointer;
+}
+
+.ljGfAc:hover {
+  background-color: rgb(18, 106, 22);
+  cursor: default;
+}
+
+<button
+  className="sc-bdVaJa ljGfAc"
+/>
+`;

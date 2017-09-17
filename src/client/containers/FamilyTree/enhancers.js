@@ -16,5 +16,6 @@ export default graphql(FAMILY_TREE_QUERY, {
     variables: {
       id: personId,
     },
+    fetchPolicy: 'cache-and-network',
   }),
 })

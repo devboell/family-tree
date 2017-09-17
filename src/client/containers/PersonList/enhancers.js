@@ -23,7 +23,7 @@ const personInfoFragment = gql`
   }
 `
 
-const PERSONS_QUERY = gql`
+export const PERSONS_QUERY = gql`
   query personsQuery {
     persons {
       id
@@ -32,10 +32,13 @@ const PERSONS_QUERY = gql`
   }
   ${personInfoFragment}
 `
+
+export const personsQueryProps = ({ data: { persons, loading, refetch } }) => ({
+  persons,
+  loading,
+  refetch,
+})
+
 export default graphql(PERSONS_QUERY, {
-  props: ({ data: { persons, loading, refetch } }) => ({
-    persons,
-    loading,
-    refetch,
-  }),
+  props: personsQueryProps,
 })
